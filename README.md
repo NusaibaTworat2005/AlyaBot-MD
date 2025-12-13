@@ -75,6 +75,27 @@ Si editas el bot, debes mantener los créditos principales y no borrarlos bajo n
 
 </details>
 
+<details>
+<summary><strong>☁️ Cafirexos</strong> — Hosting</summary>
+
+<div align="center">
+  <a href="https://cafirexos.com">
+    <img src="https://cdn.cafirexos.com/logos/logo_cfros_2000x2000.png" alt="Logo" height="125px">
+  </a>
+</div>
+
+### 🐢 Enlaces Principales
+| Servicio | Enlace |
+|------------|-----------|
+| Sitio Web | [Visitar](https://cafirexos.com) |
+| Area de clientes | [Abrir](https://cafirexos.com/clientarea.php) |
+| Panel | [Abrir](https://panel.cafirexos.com) |
+| Estado de Servicios | [Ver](https://estado.cafirexos.com) 
+| Canal de WhatsApp | [Ver](https://links.cafirexos.com/whatsapp/canal) 
+| Soporte | [Ver](https://cafirexos.com/contactenos)
+
+</details>
+
 ---
 
 ### 🪶 Colaboradores
