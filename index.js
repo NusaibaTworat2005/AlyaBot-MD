@@ -178,9 +178,7 @@ async function startBot() {
         const phoneNumber = normalizePhoneForPairing(fixed);
     try {
       const pairing = await client.requestPairingCode(phoneNumber)
-      log.success(
-        `Código de emparejamiento: ${chalk.cyanBright(pairing)} (expira en 15s)`,
-      )
+      console.log(chalk.bold.white(chalk.bgMagenta(`🪶 CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(pairing)))
     } catch (err) {
       exec("rm -rf ./Sessions/Owner/*")
       process.exit(1)
