@@ -171,9 +171,7 @@ async function startBot() {
   client.ev.on("creds.update", saveCreds)
 
   if (!client.authState.creds.registered) {
-      log.warn("Ingrese su número de WhatsApp\n")
-       log.info("Ejemplo: 57301××××××")
-        console.log(chalk.yellow('--->'))
+console.log(chalk.bold.redBright(`Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.yellowBright("CONSEJO: Copie el número de WhatsApp y péguelo en la consola.")}\n${chalk.bold.yellowBright("Ejemplo: +57301******")}\n${chalk.bold.magentaBright('---> ')} `))
         const fixed = await question("")
         const phoneNumber = normalizePhoneForPairing(fixed);
     try {
