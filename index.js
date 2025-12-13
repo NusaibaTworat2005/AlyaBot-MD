@@ -80,6 +80,24 @@ const userInfoSyt = () => {
   }
 };
 
+  const DIGITS = (s = "") => String(s).replace(/\D/g, "");
+
+  function normalizePhoneForPairing(input) {
+    let s = DIGITS(input);
+    if (!s) return "";
+    if (s.startsWith("0")) s = s.replace(/^0+/, "");
+    if (s.length === 10 && s.startsWith("3")) {
+      s = "57" + s;
+    }
+    if (s.startsWith("52") && !s.startsWith("521") && s.length >= 12) {
+      s = "521" + s.slice(2);
+    }
+    if (s.startsWith("54") && !s.startsWith("549") && s.length >= 11) {
+      s = "549" + s.slice(2);
+    }
+    return s;
+  }
+
 console.log(chalk.bold.cyan('Made With | Stellar WaBot'))
 console.log(chalk.bold.cyan('Copyright (C) - ') + chalk.bold.red('Alya Bot'))
 
@@ -156,7 +174,8 @@ async function startBot() {
       log.warn("Ingrese su número de WhatsApp\n")
        log.info("Ejemplo: 57301××××××")
         console.log(chalk.yellow('--->'))
-        const phoneNumber = await question("")
+        const fixed = await question("")
+        const phoneNumber = normalizePhoneForPairing(fixed);
     try {
       log.info("Solicitando código de emparejamiento...")
       const pairing = await client.requestPairingCode(phoneNumber)
