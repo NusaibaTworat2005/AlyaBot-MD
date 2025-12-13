@@ -204,6 +204,7 @@ const time = client.uptime ? formatearMs(Date.now() - client.uptime) : "Desconoc
 
  .  . ︵ *ɪɴғᴏ*.  ◌Ⳋ𝅄
 .꒷🌳.𖦹˙ /allmenu › /menu › /help + _<category>_
+.꒷🌳.𖦹˙ /cafi
 .꒷🌳.𖦹˙ /ayuda + _<comando>_
 .꒷🌳.𖦹˙ /infobot › /infosocket 
 .꒷🌳.𖦹˙ /creador › /owner 
@@ -279,7 +280,7 @@ const time = client.uptime ? formatearMs(Date.now() - client.uptime) : "Desconoc
 .꒷🌳.𖦹˙ /setmeta + _<packname> | <author>_
 .꒷🌳.𖦹˙ /hd 
 
-> *$namebot desarrollado por ZyxlJs* ૮(˶ᵔᵕᵔ˶)ა`.trim();
+> *$namebot está siendo alojado desde cafirexos.com, si quieres más información usa /cafi* ૮(˶ᵔᵕᵔ˶)ა`.trim();
 
       const replacements = {
         $owner: owner ? (!isNaN(owner.replace(/@s\.whatsapp\.net$/, '')) ? `@${owner.split('@')[0]}` : owner) : 'Oculto por privacidad',
