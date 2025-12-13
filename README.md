@@ -26,10 +26,14 @@ Alya Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofre
 ---
 
 ## Información Importante
-> [!TIP]
-> **El bot no funciona en Termux bajo ninguna circunstancia.**  
-> No ofrecemos soporte, compatibilidad ni soluciones para ese entorno.  
-> **Para usar el bot, es obligatorio ejecutarlo en un entorno distinto a Termux**, ya sea un servidor, hosting o cualquier plataforma externa recomendada.
+
+<details>
+<summary><strong>☃️ Información</strong> — Warning</summary>
+
+**El bot no funciona en Termux bajo ninguna circunstancia.**  
+No ofrecemos soporte, compatibilidad ni soluciones para ese entorno.  
+**Para usar el bot, es obligatorio ejecutarlo en un entorno distinto a Termux**, ya sea un servidor, hosting o cualquier plataforma externa recomendada.
+</details>
 
 ---
 
