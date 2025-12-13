@@ -80,7 +80,7 @@ Si editas el bot, debes mantener los créditos principales y no borrarlos bajo n
 
 <div align="center">
   <a href="https://cafirexos.com">
-    <img src="https://cdn.cafirexos.com/logos/logo_cfros_2000x2000.png" alt="Logo" height="125px">
+    <img src="https://cdn.cafirexos.com/logos/logo-texto-azul-1000x300.png" alt="Logo" height="125px">
   </a>
 </div>
 
