@@ -1,7 +1,6 @@
 /*
  # ------------√ ×------------
     # Agradecimientos :: ZyxlJs
-    # Agradecimientos :: Destroy
     # Agradecimientos :: AzamiJs
     # Agradecimientos :: GataDios
 
