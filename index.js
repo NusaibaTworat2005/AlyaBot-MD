@@ -177,13 +177,11 @@ async function startBot() {
         const fixed = await question("")
         const phoneNumber = normalizePhoneForPairing(fixed);
     try {
-      log.info("Solicitando código de emparejamiento...")
       const pairing = await client.requestPairingCode(phoneNumber)
       log.success(
         `Código de emparejamiento: ${chalk.cyanBright(pairing)} (expira en 15s)`,
       )
     } catch (err) {
-      log.error("Error al solicitar el código de emparejamiento:", err);
       exec("rm -rf ./Sessions/Owner/*")
       process.exit(1)
     }
