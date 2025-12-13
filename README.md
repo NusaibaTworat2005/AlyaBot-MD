@@ -16,7 +16,7 @@ Alya Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofre
 
 ---
 
-## 🪻 Características
+## ☃️ Características
 
 - Respuestas automáticas
 - Gestión de grupos
