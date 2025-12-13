@@ -10,7 +10,7 @@
 
 ---
 
-## 🪻 Descripción 
+## 🪾 Descripción 
 
 Alya Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofrece una variedad de características para mejorar tu experiencia en WhatsApp.
 
@@ -25,7 +25,7 @@ Alya Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofre
 
 ---
 
-## Información Importante
+## 🌾 Informaciones Importantes
 
 <details>
 <summary><strong>⛄ Información</strong> — Warning</summary>
@@ -65,7 +65,7 @@ Si editas el bot, debes mantener los créditos principales y no borrarlos bajo n
   </a>
 </div>
 
-### 🌱 Enlaces Oficiales
+### 🐢 Enlaces Principales
 | Servicio | Enlace |
 |------------|-----------|
 | Soporte | [Visitar](https://api.stellarwa.xyz/ticket) |
@@ -77,10 +77,10 @@ Si editas el bot, debes mantener los créditos principales y no borrarlos bajo n
 
 ---
 
-### 🫛 Colaboradores
+### 🪶 Colaboradores
 <a href="https://github.com/DevZyxlJs/AlyaBot-MD/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD" /> 
 </a> 
 
-### 🌾 Autor Del Proyecto
+### 🦩 Propietario
 [![ZyxlJs](https://github.com/DevZyxlJs.png?size=100)](https://github.com/DevZyxlJs) 
