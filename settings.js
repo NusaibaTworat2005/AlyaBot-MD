@@ -20,7 +20,6 @@ global.sessionName = 'Sessions/Owner'
 global.version = '^3.0'
 global.pairing_code = true
 global.number_bot = ''
-global.prefa = '/'
 global.msgglobal = '[Error: *TypeError*] fetch failed'
 globalThis.dev = '☄︎ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sᴛᴇʟʟᴀʀ'
 
