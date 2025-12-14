@@ -1,7 +1,7 @@
 export default {
   command: ['economyboard', 'eboard', 'baltop'],
   category: 'rpg',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     const db = global.db.data
     const chatId = m.chat
     const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
@@ -55,7 +55,7 @@ export default {
 
       text += `\n\n> ⌦ Página *${page}* de *${totalPages}*`
       if (page < totalPages)
-        text += `\n> Para ver la siguiente página › *${prefa || '/'}economyboard ${page + 1}*`
+        text += `\n> Para ver la siguiente página › *${prefix + command} ${page + 1}*`
 
       await client.sendMessage(chatId, { text }, { quoted: m })
     } catch (e) {
