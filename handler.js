@@ -152,16 +152,6 @@ if (botprimaryId && botprimaryId !== selfId) {
     ) return
   }
 
-    if (m.chat && !m.chat.endsWith('g.us')) {
-    const allowedInPrivateForUsers = ['report', 'reporte', 'sug', 'suggest', 'invite', 'invitar', 'setname', 'setbotname', 'setbanner', 'setmenubanner', 'setusername', 'setpfp', 'setimage', 'setbotcurrency', 'setbotprefix', 'setstatus', 'setbotowner', 'reload', 'codemod', 'qrmod', 'codepremium', 'qrpremium']
-    const owners = global.db.data.settings[selfId].owner
-    if (
-      sender !== owners &&
-      !global.owner.map(num => num + '@s.whatsapp.net').includes(sender) &&
-      !allowedInPrivateForUsers.includes(command)
-    ) return
-  }
-
   if (chat?.bannedGrupo && !['#bot on', '/bot on', '.bot on', '!bot on', '-bot on', '+bot on'].includes(body.toLowerCase()) &&
       !global.owner.map(num => num + '@s.whatsapp.net').includes(m.sender)) return
 
