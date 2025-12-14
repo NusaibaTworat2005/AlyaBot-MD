@@ -10,7 +10,7 @@ export default {
   ],
   category: 'grupo',
   isAdmin: true,
-  run: async (client, m, args, command) => {
+  run: async (client, m, args, command, text, prefix) => {
     const chatData = global.db.data.chats[m.chat]
     const stateArg = args[0]?.toLowerCase()
     const validStates = ['on', 'off', 'enable', 'disable']
@@ -64,15 +64,15 @@ export default {
         `*✩ ${titulo} (✿❛◡❛)*\n` +
         `❒ *Estado ›* ${estado}\n\n` +
         `ꕥ Un administrador puede activar o desactivar ${nombreBonito} utilizando:\n\n` +
-        `> ● _Habilitar ›_ *${prefa + normalizedKey} enable*\n` +
-        `> ● _Deshabilitar ›_ *${prefa + normalizedKey} disable*\n\n${dev}`,
+        `> ● _Habilitar ›_ *${prefix + normalizedKey} enable*\n` +
+        `> ● _Deshabilitar ›_ *${prefix + normalizedKey} disable*\n\n${dev}`,
         m
       )
     }
 
     if (!validStates.includes(stateArg)) {
       return m.reply(
-        `✎ Estado no válido. Usa *on*, *off*, *enable* o *disable*\n\nEjemplo:\n${prefa}${normalizedKey} enable`
+        `✎ Estado no válido. Usa *on*, *off*, *enable* o *disable*\n\nEjemplo:\n${prefix}${normalizedKey} enable`
       )
     }
 
