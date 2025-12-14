@@ -1,13 +1,13 @@
 export default {
   command: ['setdescription', 'setdesc'],
   category: 'rpg',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     const user = global.db.data.users[m.sender]
     const input = args.join(' ')
 
     if (user.description)
       return m.reply(
-        `《✧》 Ya tienes una descripción. Usa › *${prefa}deldescription* para eliminarla.`,
+        `《✧》 Ya tienes una descripción. Usa › *${prefix}deldescription* para eliminarla.`,
       )
 
     if (!input)
