@@ -101,36 +101,28 @@ const isAdmins = m.isGroup ? groupAdmins.some(p => p.phoneNumber === sender || p
 
   if (!consolePrimary || consolePrimary === client.user.id.split(':')[0] + '@s.whatsapp.net') {
 
-const BORDER_CHAR = '*';
-const BORDER_LENGTH = 40;
-const h = chalk.bold.hex('#4a90e2')(BORDER_CHAR.repeat(BORDER_LENGTH));
-const v = chalk.bold.hex('#f5f5f5')(BORDER_CHAR);
-const SPACER = ' '; 
+const b='*',l=44,H=chalk.bold.gradient.cyanMagenta(b.repeat(l)),V=chalk.bold.hex('#f0fdf4')(b),s=' '
 
-console.log(`\n${h}`)
-console.log(chalk.bold.hex('#ffd700')(
-  `${v}${SPACER}Fecha: ${chalk.hex('#ffffff').italic(moment().format('DD/MM/YYYY HH:mm:ss'))}${SPACER.repeat(BORDER_LENGTH - 11 - moment().format('DD/MM/YYYY HH:mm:ss').length)}${v}`
-))
-console.log(chalk.bold.hex('#00ffff')(
-  `${v}${SPACER}Usuario: ${chalk.hex('#ffffff').bold(pushname)}${SPACER.repeat(BORDER_LENGTH - 12 - pushname.length)}${v}`
-))
-console.log(chalk.bold.hex('#ff69b4')(
-  `${v}${SPACER}Remitente: ${gradient.rainbow(sender)}${SPACER.repeat(BORDER_LENGTH - 14 - sender.length)}${v}`
-))
+console.log(`\n${H}`)
+console.log(c.lg(`${V}${s}Fecha: ${c.wi.it(m().format('DD/MM/YYYY HH:mm:ss'))}${s.repeat(l-11-m().format('DD/MM/YYYY HH:mm:ss').length)}${V}`))
+console.log(c.cb(`${V}${s}Usuario: ${c.wi.bo(pushname)}${s.repeat(l-12-pushname.length)}${V}`))
+console.log(c.pn(`${V}${s}Remitente: ${g.rainbow(sender)}${s.repeat(l-14-sender.length)}${V}`))
+m.isGroup 
+  ? (console.log(c.gr(`${V}${s}Grupo: ${c.wi.it(groupName)}${s.repeat(l-10-groupName.length)}${V}`)),
+     console.log(c.pu(`${V}${s}ID Grupo: ${g.purplePink(from)}${s.repeat(l-13-from.length)}${V}`)))
+  : console.log(c.gr(`${V}${s}Chat: ${c.wi.bo('Privado')}${s.repeat(l-8-7)}${V}`))
+console.log(H)
 
-if (m.isGroup) {
-  console.log(chalk.bold.hex('#32cd32')(
-    `${v}${SPACER}Grupo: ${chalk.hex('#ffffff').italic(groupName)}${SPACER.repeat(BORDER_LENGTH - 10 - groupName.length)}${v}`
-  ));
-  console.log(chalk.bold.hex('#9370db')(
-    `${v}${SPACER}ID Grupo: ${gradient.purpleBlue(from)}${SPACER.repeat(BORDER_LENGTH - 13 - from.length)}${v}`
-  ))
-} else {
-  console.log(chalk.bold.hex('#32cd32')(
-    `${v}${SPACER}Tipo de chat: ${chalk.hex('#ffffff').bold('Privado')}${SPACER.repeat(BORDER_LENGTH - 17 - 7)}${v}`
-  ))
+const c={
+  lg:chalk.bold.hex('#facc15'),
+  cb:chalk.bold.hex('#22d3ee'),
+  pn:chalk.bold.hex('#ec4899'),
+  gr:chalk.bold.hex('#10b981'),
+  pu:chalk.bold.hex('#8b5cf6'),
+  wi:chalk.hex('#ffffff'),
+  it:chalk.italic,
+  bo:chalk.bold
 }
-console.log(h)
 const prefixxy = ['/', '#', '!', '-', '+', '.']
 const hasPrefix = prefixxy.some(prefix => m.text?.startsWith(prefix))
 
