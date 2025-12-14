@@ -4,8 +4,9 @@
     # Agradecimientos :: AzamiJs
     # Agradecimientos :: GataDios
 
-    - Recuerda dejar los creditos, no quites los creditos de los autores del código!
-    - Puedes modificar esta base a tu gusto, recuerda dejar los creditos correspondiente!
+   # Nota
+   - No borres los créditos, ni te pongas créditos que no son tuyos, respeta el trabajo de los demás.
+   - Evita vender los códigos del bot, este bot está totalmente publico de código Abierto.
  # ------------√ ×------------
 */
 
