@@ -25,7 +25,7 @@ const generarProblema = (dificultad) => {
   };
 };
 
-async function run(client, m, args, command) {
+async function run(client, m, args, command, text, prefix) => {
   const chatId = m.chat;
   const db = global.db.data.chats[chatId];
   const user = global.db.data.users[m.sender]
@@ -35,7 +35,7 @@ async function run(client, m, args, command) {
 
   if (command === 'responder') {
     if (!juego?.juegoActivo)
-      return // client.reply(chatId, '「✎」No hay ningún juego activo. Usa *math <dificultad>* para comenzar uno.', m);
+      return // client.reply(chatId, '「✎」No hay ningún juego activo. Usa *${prefix}math <dificultad>* para comenzar uno.', m);
 
     const quotedId = m.quoted?.key?.id || m.quoted?.id || m.quoted?.stanzaId;
     if (quotedId !== juego.problemMessageId)
@@ -43,7 +43,7 @@ async function run(client, m, args, command) {
 
     const respuestaUsuario = args[0]?.toLowerCase();
     if (!respuestaUsuario)
-      return client.reply(chatId, '「✎」Debes escribir tu respuesta. Ejemplo: */responder 42*', m);
+      return client.reply(chatId, '「✎」Debes escribir tu respuesta. Ejemplo: *${prefix + command} 42*', m);
 
     const respuestaCorrecta = juego.respuesta;
     const botId = client.user.id.split(':')[0] + '@s.whatsapp.net';
@@ -82,7 +82,7 @@ async function run(client, m, args, command) {
       return client.reply(chatId, '「✎」Especifica una dificultad válida: *facil, medio, dificil, imposible, imposible2*', m);
 
     const { problema, resultado } = generarProblema(dificultad);
-    const problemMessage = await client.reply(chatId, `「✩」Tienes 1 minuto para resolver:\n\n> ✩ *${problema}*\n\n_✐ Usa » *${prefa}responder* para responder!_`, m);
+    const problemMessage = await client.reply(chatId, `「✩」Tienes 1 minuto para resolver:\n\n> ✩ *${problema}*\n\n_✐ Usa » *${prefix}responder* para responder!_`, m);
 
     globalThis.math[chatId] = {
       juegoActivo: true,
