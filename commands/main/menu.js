@@ -31,14 +31,8 @@ export default {
       const prefix = botSettings.prefijo
 
       const isOficialBot = botId === global.client.user.id.split(':')[0] + '@s.whatsapp.net';
-      const isPremiumBot = botSettings.botprem === true;
-      const isModBot = botSettings.botmod === true;
       const botType = isOficialBot
         ? 'Principal/Owner'
-        : isPremiumBot
-          ? 'Premium'
-          : isModBot
-            ? 'Principal/Mod'
             : 'Sub Bot';
       const users = Object.keys(global.db.data.users).length;
       const device = getDevice(m.key.id);
@@ -46,10 +40,10 @@ export default {
 
 const time = client.uptime ? formatearMs(Date.now() - client.uptime) : "Desconocido"
 
-      let menu = `> *¡ʜᴏʟᴀ!* $username, como está tu día?, mucho gusto mi nombre es *$namebot*
+      let menu = `> *¡ʜᴏʟᴀ!* $sender, como está tu día?, mucho gusto mi nombre es *$namebot*
 
-*┏━ $namebot ━⊜*
-┃⋄ 📅 *Fecha* :: $fecha, $fecha2
+*┏━ ${botname} ━⊜*
+┃⋄ 📅 *Fecha* :: $tiempo, $tiempo2
 ┃⋄ </> *Developer* :: $owner
 ┃⋄ 🌾 *Tipo* :: $botType
 ┃⋄ 🌱 *Usuarios* :: $users
