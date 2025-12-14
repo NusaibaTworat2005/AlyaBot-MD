@@ -165,15 +165,17 @@ if (botprimaryId && botprimaryId !== selfId) {
     // return m.reply(`💣 El comando *${command}* no existe.\n> Usa *${prefix}help* para ver la lista de comandos disponibles.`)
    }
     const comando = m.text.slice(prefix.length);
-    if (cmdData.isOwner && !global.owner.map(num => num + '@s.whatsapp.net').includes(sender)) return // m.reply(`💣 El comando *${command}* no existe.\n> Usa *${prefa}help* para ver la lista de comandos disponibles.`)
-    if (cmdData.isModeration && !global.mods.map(num => num + '@s.whatsapp.net').includes(sender)) return // m.reply(`💣 El comando *${command}* no existe.\n> Usa *${prefa}help* para ver la lista de comandos disponibles.`)
-    if (cmdData.isAdmin && !isAdmins) return client.reply(m.chat, mess.admin, m)
-    if (cmdData.botAdmin && !isBotAdmins) return client.reply(m.chat, mess.botAdmin, m)
+if (cmdData && typeof cmdData === 'object' && cmdData.isOwner && !global.owner.map(num => num + '@s.whatsapp.net').includes(sender)
+) { return }
+   if (cmdData && typeof cmdData === 'object' && cmdData.isModeration && !global.mods.map(num => num + '@s.whatsapp.net').includes(sender)
+) { return } 
+if (cmdData && typeof cmdData === 'object' && cmdData.isAdmin && !isAdmins) { return client.reply(m.chat, mess.admin, m) }
+if (cmdData && typeof cmdData === 'object' && cmdData.botAdmin && !isBotAdmins) { return client.reply(m.chat, mess.botAdmin, m) }  
 
     try {
     await client.readMessages([m.key])
-    const user = global.db.data.chats[m.chat].users[m.sender] ||= {}
-    const user2 = global.db.data.users[m.sender] ||= {}
+    const user = global.db.data.chats[m.chat].users[m.sender] || {}
+    const user2 = global.db.data.users[m.sender] || {}
 
     user2.usedcommands = (user2.usedcommands || 0) + 1
     user.usedTime = new Date()
