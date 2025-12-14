@@ -26,7 +26,7 @@ import pino from "pino";
 import crypto from 'crypto';
 import chalk from "chalk";
 import fs from "fs";
-import path, { join, dirname } from "path";
+import path from "path";
 import boxen from 'boxen';
 import readline from "readline";
 import os from "os";
@@ -37,11 +37,6 @@ import db from "./lib/system/database.js";
 import { startSubBot } from './lib/subs.js';
 import { exec, execSync } from "child_process";
 import moment from 'moment-timezone';
-import { createRequire } from 'module';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const require = createRequire(__dirname)
 
 const log = {
   info: (msg) => console.log(chalk.bgBlue.white.bold(`INFO`), chalk.white(msg)),
@@ -103,34 +98,18 @@ const userInfoSyt = () => {
     }
     return s;
   }
-
-const { name, author, version, description, collaborators } = require(join(__dirname, './package.json')) 
+ 
 const { say } = cfonts
-
-const subtitleStyle = chalk.white.bold
-const responseStyle = chalk.dim.bold
-
-let activeCollaborators = ''
-for (const key in collaborators) {
-if (collaborators.hasOwnProperty(key)) {
-activeCollaborators += collaborators[key] + ', '
-}}
-activeCollaborators = activeCollaborators.slice(0, -2)
 
 say('alya san', {
 align: 'center',           
 gradient: ['red', 'blue'] 
 })
-say(description, {
+say('WhatsApp Bot', {
 font: 'console',
 align: 'center',
 gradient: ['blue', 'magenta']
 })
-
-const message = `${subtitleStyle('Desarrollado por »')} ${responseStyle(author)}
-${subtitleStyle('Colaboradores activos »')} ${responseStyle(activeCollaborators)}
-${subtitleStyle('Versión »')} ${responseStyle(version)}`
-console.log(boxen(message, { padding: 1, margin: 1, borderStyle: 'double', borderColor: 'blue', float: 'center', }))
 
 const BOT_TYPES = [
   { name: 'SubBot', folder: './Sessions/Subs', starter: startSubBot }
