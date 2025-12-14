@@ -83,7 +83,7 @@ export default {
     message += `✿ Subs › *${totalCounts.Sub}*\n\n`
     message += `➭ *Bots en el grupo ›* ${totalInGroup}\n`
 
-    for (const category of ['Owner', 'Mod', 'Premium', 'Sub']) {
+    for (const category of ['Owner', 'Sub']) {
       if (categorizedBots[category].length) {
         message += categorizedBots[category].join('\n') + '\n'
       }
