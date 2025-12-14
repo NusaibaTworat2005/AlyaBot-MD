@@ -52,7 +52,7 @@ export default {
 
     chatData.timeTrade = Date.now() + 60000
 
-    const solicitudMessage = `❀ @${personaje2UserId.split('@')[0]}, @${userId.split('@')[0]} te ha enviado una solicitud de intercambio\n\n✎ *${personaje2.name}* ⇄ *${personaje1.name}*\n> ꕥ Para aceptar, usa › *${prefa}accepttrade* dentro de 1 minuto.
+    const solicitudMessage = `❀ @${personaje2UserId.split('@')[0]}, @${userId.split('@')[0]} te ha enviado una solicitud de intercambio\n\n✎ *${personaje2.name}* ⇄ *${personaje1.name}*\n> ꕥ Para aceptar, usa › *${prefix}accepttrade* dentro de 1 minuto.
 
 ${dev}`
     await client.sendMessage(
