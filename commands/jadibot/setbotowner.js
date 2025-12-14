@@ -3,7 +3,7 @@ import { resolveLidToRealJid } from "../../lib/utils.js"
 export default {
   command: ['setbotowner'],
   category: 'socket',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     const idBot = client.user.id.split(':')[0] + '@s.whatsapp.net'
     const config = global.db.data.settings[idBot]
     const isOwner2 = [idBot, ...global.owner.map((number) => number + '@s.whatsapp.net')].includes(m.sender)
@@ -13,7 +13,7 @@ export default {
     const who = await resolveLidToRealJid(who2, client, m.chat);
     const menti = client.user.id.split(':')[0] + "@s.whatsapp.net"
     if (!who2) {
-     return client.reply(m.chat, `✐ Debes mencionar al nuevo dueño del bot.\n> Ejemplo: *${prefa}setbotowner @${menti.split('@')[0]}*`, m, { mentions: [menti] })
+     return client.reply(m.chat, `✐ Debes mencionar al nuevo dueño del bot.\n> Ejemplo: *${prefix + command} @${menti.split('@')[0]}*`, m, { mentions: [menti] })
     }
 
 const anteriorOwner = config.owner
