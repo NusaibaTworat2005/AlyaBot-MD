@@ -43,7 +43,7 @@ export default {
       const character = userData.characters[characterIndex]
       const expira = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()
 
-      userData.personajesEnVenta ||= []
+     // userData.personajesEnVenta ||= []
       userData.personajesEnVenta.push({
         ...character,
         precio: precioCoins,
@@ -73,7 +73,7 @@ setInterval(
             const exp = new Date(p.expira)
             const expired = Date.now() > exp
             if (expired) {
-              user.characters ||= []
+             // user.characters ||= []
               user.characters.push(p)
             }
             return !expired
