@@ -62,7 +62,7 @@ export default {
 
       await client.reply(m.chat, upload, m)
     } catch (e) {
-      await m.reply(msgglobal)
+      await m.reply(msgglobal + e)
     }
   }
 }
