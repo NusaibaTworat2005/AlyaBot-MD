@@ -4,12 +4,12 @@ import FormData from 'form-data';
 export default {
   command: ['hd'],
   category: 'utils',
-  run: async (client, m, args, from) => {
+  run: async (client, m, args, prefix) => {
     try {
       const q = m.quoted || m
       const mime = q.mimetype || q.msg?.mimetype || ''
 
-      if (!mime) return m.reply(`《✧》 Envía una *imagen* junto al *comando* ${prefa}hd`)
+      if (!mime) return m.reply(`《✧》 Envía una *imagen* junto al *comando* ${prefix}hd`)
       if (!/image\/(jpe?g|png)/.test(mime)) {
         return m.reply(`《✧》 El formato *${mime}* no es compatible`)
       }
