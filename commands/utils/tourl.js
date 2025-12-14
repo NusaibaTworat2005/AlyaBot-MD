@@ -11,12 +11,12 @@ function formatBytes(bytes) {
 export default {
   command: ['tourl'],
   category: 'utils',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     try {
       const q = m.quoted || m
       const mime = q.mimetype || q.msg?.mimetype || ''
 
-      if (!mime) return m.reply(`《✧》 Envía una *imagen* junto al comando *${prefa}tourl*`)
+      if (!mime) return m.reply(`《✧》 Envía una *imagen* junto al comando *${prefix + command}*`)
       if (!/image\/(jpe?g|png)/.test(mime)) {
         return m.reply(`《✧》 El formato *${mime}* no es compatible`)
       }
