@@ -1,7 +1,7 @@
 export default {
   command: ['setpasatiempo', 'sethobby'],
   category: 'rpg',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     const user = global.db.data.users[m.sender]
     const prefa = global.prefa || '!'
     const input = args.join(' ').trim()
@@ -28,7 +28,7 @@ export default {
       pasatiemposDisponibles.forEach((pasatiempo, index) => {
         lista += `${index + 1}) ${pasatiempo}\n`
       })
-      lista += `\n*Ejemplos:*\n${prefa}setpasatiempo 1\n${prefa}setpasatiempo Leer\n${prefa}setpasatiempo "Otro 🌟"`
+      lista += `\n*Ejemplos:*\n${prefa}setpasatiempo 1\n${prefix + command} Leer\n${prefix + command} "Otro 🌟"`
       
       return m.reply(lista)
     }
