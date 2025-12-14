@@ -1654,5 +1654,12 @@
     "gender": "Mujer",
     "source": "Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu",
     "keyword": "sylpha_(dai_nana_oji)" 
+  },
+  {
+     "name": "Tina Sprout",
+     "value": "4000",
+     "gender": "Mujer",
+     "source": "Black Bullet",
+     "keyword": "tina_sprout" 
   }
 ]
