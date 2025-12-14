@@ -1,31 +1,5 @@
 import fetch from 'node-fetch'
-
-const usedIds = new Set()
-
-function generateUniqueFilename(mime) {
-  const ext = mime.split('/')[1] || 'bin'
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-  let id
-  do {
-    id = Array.from({ length: 4 }, () => chars[Math.floor(Math.random() * chars.length)]).join('')
-  } while (usedIds.has(id))
-  usedIds.add(id)
-  return `${id}.${ext}`
-}
-
-const uploadToUguu = async (buffer, mime) => {
-  const filename = generateUniqueFilename(mime)
-  const form = new FormData()
-  form.append('files[]', buffer, filename)
-
-  const res = await fetch('https://uguu.se/upload.php', {
-    method: 'POST',
-    body: form
-  })
-
-  const json = await res.json()
-  return json?.files?.[0]?.url || null
-}
+import FormData from 'form-data'
 
 function formatBytes(bytes) {
   if (bytes === 0) return '0 B'
@@ -37,32 +11,44 @@ function formatBytes(bytes) {
 export default {
   command: ['tourl'],
   category: 'utils',
-  run: async (client, m, command) => {
-
-    const q = m.quoted || m
-    const mime = (q.msg || q).mimetype || ''
-    if (!mime) {
-      return client.reply(
-        m.chat,
-        `《✧》 Por favor, responde a una imagen o video con el comando *${prefa}tourl* para convertirlo en una URL.`,
-        m
-      )
-    }
-
+  run: async (client, m, args) => {
     try {
-      const media = await q.download()
-      const link = await uploadToUguu(media, mime)
+      const q = m.quoted || m
+      const mime = q.mimetype || q.msg?.mimetype || ''
 
-      if (!link) {
-        return client.reply(m.chat, '《✧》 No se pudo subir el archivo a Uguu.', m)
+      if (!mime) return m.reply(`《✧》 Envía una *imagen* junto al comando *${prefa}tourl*`)
+      if (!/image\/(jpe?g|png)/.test(mime)) {
+        return m.reply(`《✧》 El formato *${mime}* no es compatible`)
       }
 
-      const userName = global.db.data.users[m.sender]?.name || 'Usuario'
-      const upload = `ꕥ *Upload To Uguu*\n\n✎ *Link ›* ${link}\n✰ *Peso ›* ${formatBytes(media.length)}\n✿ *Solicitado por ›* ${userName}\n\n${dev}`
+      const buffer = await q.download()
+      const url = await uploadToUguu(buffer)
 
-      await client.reply(m.chat, upload, m)
-    } catch (e) {
-      await m.reply(msgglobal + e)
+      if (!url) return m.reply('《✧》 No se pudo *subir* la imagen')
+
+      const userName = global.db.data.users[m.sender]?.name || 'Usuario'
+      const peso = formatBytes(buffer.length)
+
+      const msg = `ꕥ *Upload To Uguu*\n\n✎ *Link ›* ${url}\n✰ *Peso ›* ${peso}\n✿ *Solicitado por ›* ${userName}\n\n${dev}`
+
+      return m.reply(msg)
+    } catch (err) {
+      console.error(err)
+      return m.reply(msgglobal)
     }
-  }
+  },
+}
+
+async function uploadToUguu(buffer) {
+  const body = new FormData()
+  body.append('files[]', buffer, 'image.jpg')
+
+  const res = await fetch('https://uguu.se/upload.php', {
+    method: 'POST',
+    body,
+    headers: body.getHeaders(),
+  })
+
+  const json = await res.json()
+  return json.files?.[0]?.url
 }
