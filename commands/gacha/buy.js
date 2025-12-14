@@ -51,8 +51,8 @@ export default {
 
     if (!m.quoted) return m.reply(`✎ Responde a una waifu para reclamarla.`)
 
-    chatConfig.users ||= {}
-    chatConfig.personajesReservados ||= []
+   // chatConfig.users ||= {}
+   // chatConfig.personajesReservados ||= []
 
     const quotedMessage = m.quoted.body || m.quoted.text || ''
     const reservedCharacter = chatConfig.personajesReservados.find((p) =>
