@@ -8,7 +8,7 @@ export default {
     if (!isOwner2 && m.sender !== owner) return m.reply(mess.socket)
     const value = args.join(' ').trim()
     if (!value) {
-      return m.reply(`❀ Ingresa el enlace o el ID de un canal de WhatsApp.\n\nEjemplos:\n*${client.prefix}setchannel* https://whatsapp.com/channel/XXXXXXXXXXXXXX\n*${client.prefix}setchannel* 12345@newsletter`)
+      return m.reply(`❀ Ingresa el enlace o el ID de un canal de WhatsApp.`)
     }
     let info, ch
     if (/@newsletter$/i.test(value)) {
