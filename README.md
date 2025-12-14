@@ -113,8 +113,8 @@ Mi estructura, mi lógica y mi diseño pertenecen a mi proyecto, y cualquier int
 <img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD" /> 
 </a> 
 
-### 🌺 Creditos
-[![Carlos](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs) [![GataDios](https://github.com/GataDios.png?size=100)](https://github.com/GataDios)
+### 🌺 Creditos Principales
+[![Carlos](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs) [![GataDios](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li)
 
 ### 🦩 Propietario
 [![ZyxlJs](https://github.com/DevZyxlJs.png?size=100)](https://github.com/DevZyxlJs) 
