@@ -118,7 +118,7 @@ Ninguna réplica, modificación o derivado externo tiene relación con mi trabaj
 </a> 
 
 ### 🌺 Creditos Principales
-[![Carlos](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs) [![GataDios](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li)
+[![Carlos](https://github.com/AzamiJs.png?size=120)](https://github.com/AzamiJs) [![GataDios](https://github.com/GataNina-Li.png?size=120)](https://github.com/GataNina-Li)
 
 ### 🦩 Propietario
 [![ZyxlJs](https://github.com/DevZyxlJs.png?size=150)](https://github.com/DevZyxlJs) 
