@@ -100,29 +100,11 @@ const isAdmins = m.isGroup ? groupAdmins.some(p => p.phoneNumber === sender || p
   const consolePrimary = fromprimary.primaryBot;
 
   if (!consolePrimary || consolePrimary === client.user.id.split(':')[0] + '@s.whatsapp.net') {
-
-const b='*',l=44,H=chalk.bold.gradient.cyanMagenta(b.repeat(l)),V=chalk.bold.hex('#f0fdf4')(b),s=' '
-
-console.log(`\n${H}`)
-console.log(c.lg(`${V}${s}Fecha: ${c.wi.it(m().format('DD/MM/YYYY HH:mm:ss'))}${s.repeat(l-11-m().format('DD/MM/YYYY HH:mm:ss').length)}${V}`))
-console.log(c.cb(`${V}${s}Usuario: ${c.wi.bo(pushname)}${s.repeat(l-12-pushname.length)}${V}`))
-console.log(c.pn(`${V}${s}Remitente: ${g.rainbow(sender)}${s.repeat(l-14-sender.length)}${V}`))
-m.isGroup 
-  ? (console.log(c.gr(`${V}${s}Grupo: ${c.wi.it(groupName)}${s.repeat(l-10-groupName.length)}${V}`)),
-     console.log(c.pu(`${V}${s}ID Grupo: ${g.purplePink(from)}${s.repeat(l-13-from.length)}${V}`)))
-  : console.log(c.gr(`${V}${s}Chat: ${c.wi.bo('Privado')}${s.repeat(l-8-7)}${V}`))
-console.log(H)
-
-const c={
-  lg:chalk.bold.hex('#facc15'),
-  cb:chalk.bold.hex('#22d3ee'),
-  pn:chalk.bold.hex('#ec4899'),
-  gr:chalk.bold.hex('#10b981'),
-  pu:chalk.bold.hex('#8b5cf6'),
-  wi:chalk.hex('#ffffff'),
-  it:chalk.italic,
-  bo:chalk.bold
-}}
+  const h = chalk.bold.blue('************************************')
+  const v = chalk.bold.white('*')
+  console.log(
+    `\n${h}\n${chalk.bold.yellow(`${v} Fecha: ${chalk.whiteBright(moment().format('DD/MM/YY HH:mm:ss'))}`)}\n${chalk.bold.blueBright(`${v} Usuario: ${chalk.whiteBright(pushname)}`)}\n${chalk.bold.magentaBright(`${v} Remitente: ${gradient('deepskyblue', 'darkorchid')(sender)}`)}\n${m.isGroup ? chalk.bold.cyanBright(`${v} Grupo: ${chalk.greenBright(groupName)}\n${v} ID: ${gradient('violet', 'midnightblue')(from)}\n`) : chalk.bold.greenBright(`${v} Chat privado\n`)}${h}`
+  )}
 const prefixxy = ['/', '#', '!', '-', '+', '.']
 const hasPrefix = prefixxy.some(prefix => m.text?.startsWith(prefix))
 
