@@ -114,7 +114,7 @@ console.log(`
 ❚ ▸ ${chalk.green('𝐔𝐒𝐔𝐀𝐑𝐈𝐎 ❱❱')} ${chalk.white(pushname)}
 ❚ ▸ ${chalk.green('𝐆𝐑𝐔𝐏𝐎 ❱❱')} ${chalk.cyan(m.isGroup ? groupName : 'Chat Privado')}
 ❚ ▸ ${chalk.green('𝐈𝐃 ❱❱')} ${chalk.cyan(m.isGroup ? from : 'Chat Privado')}
-𝄢 · • —– ٠ ✤ ٠ —– • · · • —– ٠ ✤ ٠ —– • ·✧༄`.trim()
+𝄢 · • —– ٠ ✤ ٠ —– • · · • —– ٠ ✤ ٠ —– • ·✧༄`)
 }
 const prefixxy = ['/', '#', '!', '-', '+', '.']
 const hasPrefix = prefixxy.some(prefix => m.text?.startsWith(prefix))
