@@ -7,7 +7,7 @@ import moment from 'moment-timezone';
 export default {
   command: ['allmenu', 'help', 'menu'],
   category: 'info',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     try {
       const now = new Date();
       const colombianTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Bogota' }));
@@ -27,8 +27,6 @@ export default {
       const canalId = botSettings.id || '120363420992828502@newsletter';
       const canalName = botSettings.nameid || '𐚁๋࣭⭑ֶָ֢ ѕтєℓℓαя ωα ⚡︎ ¢нαηηєℓ ₍ᐢ..ᐢ₎♡';
       const link = botSettings.link || bot.api;
-
-      const prefix = botSettings.prefijo
 
       const isOficialBot = botId === global.client.user.id.split(':')[0] + '@s.whatsapp.net';
       const botType = isOficialBot
@@ -55,228 +53,228 @@ const time = client.uptime ? formatearMs(Date.now() - client.uptime) : "Desconoc
 乂 *ʟɪsᴛᴀ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏs* 乂
 
  .  . ︵ *ᴀɴɪᴍᴇ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /peek + _<mention>_
-.꒷🌳.𖦹˙ /comfort + _<mention>_
-.꒷🌳.𖦹˙ /thinkhard + _<mention>_
-.꒷🌳.𖦹˙ /curious + _<mention>_
-.꒷🌳.𖦹˙ /sniff + _<mention>_
-.꒷🌳.𖦹˙ /stare + _<mention>_
-.꒷🌳.𖦹˙ /trip + _<mention>_
-.꒷🌳.𖦹˙ /blowkiss + _<mention>_
-.꒷🌳.𖦹˙ /snuggle + _<mention>_
-.꒷🌳.𖦹˙ /angry + _<mention>_
-.꒷🌳.𖦹˙ /bleh + _<mention>_
-.꒷🌳.𖦹˙ /bored › /aburrido + _<mention>_
-.꒷🌳.𖦹˙ /clap + _<mention>_
-.꒷🌳.𖦹˙ /coffee › /cafe + _<mention>_
-.꒷🌳.𖦹˙ /cold + _<mention>_
-.꒷🌳.𖦹˙ /sing + _<mention>_
-.꒷🌳.𖦹˙ /tickle + _<mention>_
-.꒷🌳.𖦹˙ /scream + _<mention>_
-.꒷🌳.𖦹˙ /push + _<mention>_
-.꒷🌳.𖦹˙ /nope + _<mention>_
-.꒷🌳.𖦹˙ /jump + _<mention>_
-.꒷🌳.𖦹˙ /heat + _<mention>_
-.꒷🌳.𖦹˙ /gaming + _<mention>_
-.꒷🌳.𖦹˙ /draw + _<mention>_
-.꒷🌳.𖦹˙ /call + _<mention>_
-.꒷🌳.𖦹˙ /dramatic › /drama + _<mention>_
-.꒷🌳.𖦹˙ /drunk + _<mention>_
-.꒷🌳.𖦹˙ /impregnate › /preg + _<mention>_
-.꒷🌳.𖦹˙ /kisscheek › /beso + _<mention>_
-.꒷🌳.𖦹˙ /laugh + _<mention>_
-.꒷🌳.𖦹˙ /love › /amor + _<mention>_
-.꒷🌳.𖦹˙ /pout + _<mention>_
-.꒷🌳.𖦹˙ /punch + _<mention>_
-.꒷🌳.𖦹˙ /run › /correr + _<mention>_
-.꒷🌳.𖦹˙ /sad › /triste + _<mention>_
-.꒷🌳.𖦹˙ /scared + _<mention>_
-.꒷🌳.𖦹˙ /seduce + _<mention>_
-.꒷🌳.𖦹˙ /shy › /timido + _<mention>_
-.꒷🌳.𖦹˙ /sleep + _<mention>_
-.꒷🌳.𖦹˙ /smoke › /fumar + _<mention>_
-.꒷🌳.𖦹˙ /spit › /escupir + _<mention>_
-.꒷🌳.𖦹˙ /step › /pisar + _<mention>_
-.꒷🌳.𖦹˙ /think + _<mention>_
-.꒷🌳.𖦹˙ /walk + _<mention>_
-.꒷🌳.𖦹˙ /hug + _<mention>_
-.꒷🌳.𖦹˙ /kill + _<mention>_
-.꒷🌳.𖦹˙ /eat › /nom › /comer + _<mention>_
-.꒷🌳.𖦹˙ /kiss › /muak + _<mention>_
-.꒷🌳.𖦹˙ /wink + _<mention>_
-.꒷🌳.𖦹˙ /pat + _<mention>_
-.꒷🌳.𖦹˙ /happy › /feliz + _<mention>_
-.꒷🌳.𖦹˙ /bully + _<mention>_
-.꒷🌳.𖦹˙ /bite › /morder + _<mention>_
-.꒷🌳.𖦹˙ /blush + _<mention>_
-.꒷🌳.𖦹˙ /wave + _<mention>_
-.꒷🌳.𖦹˙ /bath + _<mention>_
-.꒷🌳.𖦹˙ /smug + _<mention>_
-.꒷🌳.𖦹˙ /smile + _<mention>_
-.꒷🌳.𖦹˙ /highfive + _<mention>_
-.꒷🌳.𖦹˙ /handhold + _<mention>_
-.꒷🌳.𖦹˙ /cringe + _<mention>_
-.꒷🌳.𖦹˙ /bonk + _<mention>_
-.꒷🌳.𖦹˙ /cry + _<mention>_
-.꒷🌳.𖦹˙ /lick + _<mention>_
-.꒷🌳.𖦹˙ /slap + _<mention>_
-.꒷🌳.𖦹˙ /dance + _<mention>_
-.꒷🌳.𖦹˙ /cuddle + _<mention>_
+.꒷🌳.𖦹˙ $prefixpeek + _<mention>_
+.꒷🌳.𖦹˙ $prefixcomfort + _<mention>_
+.꒷🌳.𖦹˙ $prefixthinkhard + _<mention>_
+.꒷🌳.𖦹˙ $prefixcurious + _<mention>_
+.꒷🌳.𖦹˙ $prefixsniff + _<mention>_
+.꒷🌳.𖦹˙ $prefixstare + _<mention>_
+.꒷🌳.𖦹˙ $prefixtrip + _<mention>_
+.꒷🌳.𖦹˙ $prefixblowkiss + _<mention>_
+.꒷🌳.𖦹˙ $prefixsnuggle + _<mention>_
+.꒷🌳.𖦹˙ $prefixangry + _<mention>_
+.꒷🌳.𖦹˙ $prefixbleh + _<mention>_
+.꒷🌳.𖦹˙ $prefixbored › $prefixaburrido + _<mention>_
+.꒷🌳.𖦹˙ $prefixclap + _<mention>_
+.꒷🌳.𖦹˙ $prefixcoffee › $prefixcafe + _<mention>_
+.꒷🌳.𖦹˙ $prefixcold + _<mention>_
+.꒷🌳.𖦹˙ $prefixsing + _<mention>_
+.꒷🌳.𖦹˙ $prefixtickle + _<mention>_
+.꒷🌳.𖦹˙ $prefixscream + _<mention>_
+.꒷🌳.𖦹˙ $prefixpush + _<mention>_
+.꒷🌳.𖦹˙ $prefixnope + _<mention>_
+.꒷🌳.𖦹˙ $prefixjump + _<mention>_
+.꒷🌳.𖦹˙ $prefixheat + _<mention>_
+.꒷🌳.𖦹˙ $prefixgaming + _<mention>_
+.꒷🌳.𖦹˙ $prefixdraw + _<mention>_
+.꒷🌳.𖦹˙ $prefixcall + _<mention>_
+.꒷🌳.𖦹˙ $prefixdramatic › $prefixdrama + _<mention>_
+.꒷🌳.𖦹˙ $prefixdrunk + _<mention>_
+.꒷🌳.𖦹˙ $prefiximpregnate › $prefixpreg + _<mention>_
+.꒷🌳.𖦹˙ $prefixkisscheek › $prefixbeso + _<mention>_
+.꒷🌳.𖦹˙ $prefixlaugh + _<mention>_
+.꒷🌳.𖦹˙ $prefixlove › $prefixamor + _<mention>_
+.꒷🌳.𖦹˙ $prefixpout + _<mention>_
+.꒷🌳.𖦹˙ $prefixpunch + _<mention>_
+.꒷🌳.𖦹˙ $prefixrun › $prefixcorrer + _<mention>_
+.꒷🌳.𖦹˙ $prefixsad › $prefixtriste + _<mention>_
+.꒷🌳.𖦹˙ $prefixscared + _<mention>_
+.꒷🌳.𖦹˙ $prefixseduce + _<mention>_
+.꒷🌳.𖦹˙ $prefixshy › $prefixtimido + _<mention>_
+.꒷🌳.𖦹˙ $prefixsleep + _<mention>_
+.꒷🌳.𖦹˙ $prefixsmoke › $prefixfumar + _<mention>_
+.꒷🌳.𖦹˙ $prefixspit › $prefixescupir + _<mention>_
+.꒷🌳.𖦹˙ $prefixstep › $prefixpisar + _<mention>_
+.꒷🌳.𖦹˙ $prefixthink + _<mention>_
+.꒷🌳.𖦹˙ $prefixwalk + _<mention>_
+.꒷🌳.𖦹˙ $prefixhug + _<mention>_
+.꒷🌳.𖦹˙ $prefixkill + _<mention>_
+.꒷🌳.𖦹˙ $prefixeat › $prefixnom › $prefixcomer + _<mention>_
+.꒷🌳.𖦹˙ $prefixkiss › $prefixmuak + _<mention>_
+.꒷🌳.𖦹˙ $prefixwink + _<mention>_
+.꒷🌳.𖦹˙ $prefixpat + _<mention>_
+.꒷🌳.𖦹˙ $prefixhappy › $prefixfeliz + _<mention>_
+.꒷🌳.𖦹˙ $prefixbully + _<mention>_
+.꒷🌳.𖦹˙ $prefixbite › $prefixmorder + _<mention>_
+.꒷🌳.𖦹˙ $prefixblush + _<mention>_
+.꒷🌳.𖦹˙ $prefixwave + _<mention>_
+.꒷🌳.𖦹˙ $prefixbath + _<mention>_
+.꒷🌳.𖦹˙ $prefixsmug + _<mention>_
+.꒷🌳.𖦹˙ $prefixsmile + _<mention>_
+.꒷🌳.𖦹˙ $prefixhighfive + _<mention>_
+.꒷🌳.𖦹˙ $prefixhandhold + _<mention>_
+.꒷🌳.𖦹˙ $prefixcringe + _<mention>_
+.꒷🌳.𖦹˙ $prefixbonk + _<mention>_
+.꒷🌳.𖦹˙ $prefixcry + _<mention>_
+.꒷🌳.𖦹˙ $prefixlick + _<mention>_
+.꒷🌳.𖦹˙ $prefixslap + _<mention>_
+.꒷🌳.𖦹˙ $prefixdance + _<mention>_
+.꒷🌳.𖦹˙ $prefixcuddle + _<mention>_
 
  .  . ︵ *ᴅᴏᴡɴʟᴏᴀᴅs*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /facebook › /fb + _<url>_
-.꒷🌳.𖦹˙ /mediafire › /mf + _<query|url>_
-.꒷🌳.𖦹˙ /gdrive › /drive + _<url>_
-.꒷🌳.𖦹˙ /instagram › /ig + _<url>_
-.꒷🌳.𖦹˙ /tiktok › /tt + _<url|query>_
-.꒷🌳.𖦹˙ /play › /mp3 › /playaudio › /ytaudio › /ytmp3 + _<url|query>_
-.꒷🌳.𖦹˙ /play2 › /mp4 › /playvideo › /ytvideo › /ytmp4 + _<url|query>_
+.꒷🌳.𖦹˙ $prefixfacebook › $prefixfb + _<url>_
+.꒷🌳.𖦹˙ $prefixmediafire › $prefixmf + _<query|url>_
+.꒷🌳.𖦹˙ $prefixgdrive › $prefixdrive + _<url>_
+.꒷🌳.𖦹˙ $prefixinstagram › $prefixig + _<url>_
+.꒷🌳.𖦹˙ $prefixtiktok › $prefixtt + _<url|query>_
+.꒷🌳.𖦹˙ $prefixplay › $prefixmp3 › $prefixplayaudio › $prefixytaudio › $prefixytmp3 + _<url|query>_
+.꒷🌳.𖦹˙ $prefixplay2 › $prefixmp4 › $prefixplayvideo › $prefixytvideo › $prefixytmp4 + _<url|query>_
 
  .  . ︵ *ᴇᴄᴏɴᴏᴍɪᴀ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /balance › /bal + _<mention>_
-.꒷🌳.𖦹˙ /steal › /rob › /robar + _<mention>_
-.꒷🌳.𖦹˙ /crime 
-.꒷🌳.𖦹˙ /ritual 
-.꒷🌳.𖦹˙ /givecoins › /pay › /coinsgive + _<cantidad|all>_ + _<mention>_
-.꒷🌳.𖦹˙ /ppt + _<piedra|papel|tijera>_
-.꒷🌳.𖦹˙ /waittimes › /cooldowns › /economyinfo › /einfo 
-.꒷🌳.𖦹˙ /economyboard › /baltop › /eboard + _<página>_
-.꒷🌳.𖦹˙ /slut 
-.꒷🌳.𖦹˙ /mine 
-.꒷🌳.𖦹˙ /rt › /roulette › /ruleta + _<cantidad>_ + _<red|black|green>_
-.꒷🌳.𖦹˙ /coinflip › /flip › /cf + _<bet>_
-.꒷🌳.𖦹˙ /daily 
-.꒷🌳.𖦹˙ /monthly › /mensual 
-.꒷🌳.𖦹˙ /weekly › /semanal 
-.꒷🌳.𖦹˙ /work › /w 
-.꒷🌳.𖦹˙ /math › /matematicas + _<dificultad>_
-.꒷🌳.𖦹˙ /deposit › /dep › /d + _<cantidad|all>_
-.꒷🌳.𖦹˙ /withdraw › /with + _<cantidad|all>_
+.꒷🌳.𖦹˙ $prefixbalance › $prefixbal + _<mention>_
+.꒷🌳.𖦹˙ $prefixsteal › $prefixrob › $prefixrobar + _<mention>_
+.꒷🌳.𖦹˙ $prefixcrime 
+.꒷🌳.𖦹˙ $prefixritual 
+.꒷🌳.𖦹˙ $prefixgivecoins › $prefixpay › $prefixcoinsgive + _<cantidad|all>_ + _<mention>_
+.꒷🌳.𖦹˙ $prefixppt + _<piedra|papel|tijera>_
+.꒷🌳.𖦹˙ $prefixwaittimes › $prefixcooldowns › $prefixeconomyinfo › $prefixeinfo 
+.꒷🌳.𖦹˙ $prefixeconomyboard › $prefixbaltop › $prefixeboard + _<página>_
+.꒷🌳.𖦹˙ $prefixslut 
+.꒷🌳.𖦹˙ $prefixmine 
+.꒷🌳.𖦹˙ $prefixrt › $prefixroulette › $prefixruleta + _<cantidad>_ + _<red|black|green>_
+.꒷🌳.𖦹˙ $prefixcoinflip › $prefixflip › $prefixcf + _<bet>_
+.꒷🌳.𖦹˙ $prefixdaily 
+.꒷🌳.𖦹˙ $prefixmonthly › $prefixmensual 
+.꒷🌳.𖦹˙ $prefixweekly › $prefixsemanal 
+.꒷🌳.𖦹˙ $prefixwork › $prefixw 
+.꒷🌳.𖦹˙ $prefixmath › $prefixmatematicas + _<dificultad>_
+.꒷🌳.𖦹˙ $prefixdeposit › $prefixdep › $prefixd + _<cantidad|all>_
+.꒷🌳.𖦹˙ $prefixwithdraw › $prefixwith + _<cantidad|all>_
 
  .  . ︵ *ɢᴀᴄʜᴀ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /rw › /roll › /rollwaifu › /rf 
-.꒷🌳.𖦹˙ /c › /claim › /buy + _<waifu>_
-.꒷🌳.𖦹˙ /harem › /miswaifus › /claims 
-.꒷🌳.𖦹˙ /sell › /vender + _<waifu>_ + _<value>_
-.꒷🌳.𖦹˙ /buyc › /buycharacter › /buychar + _<waifu>_
-.꒷🌳.𖦹˙ /trade › /cambiar + _<tu personaje / personaje 2>_
-.꒷🌳.𖦹˙ /animelist › /slist › /serielist 
-.꒷🌳.𖦹˙ /animeinfo › /ainfo › /serieinfo + _<anime>_
-.꒷🌳.𖦹˙ /tiendawaifus › /wshop › /haremshop 
-.꒷🌳.𖦹˙ /deletechar › /delwaifu › /delchar + _<waifu>_
-.꒷🌳.𖦹˙ /removerventa › /removesale + _<waifu>_
-.꒷🌳.𖦹˙ /givechar › /regalar › /givewaifu + _<mention>_ + _<waifu>_
-.꒷🌳.𖦹˙ /giveallharem + _<mention>_
-.꒷🌳.𖦹˙ /ginfo › /infogacha › /gachainfo 
-.꒷🌳.𖦹˙ /winfo › /charinfo › /cinfo + _<waifu>_
-.꒷🌳.𖦹˙ /wimage › /charimage › /cimage + _<waifu>_
-.꒷🌳.𖦹˙ /vote › /votar + _<waifu>_
-.꒷🌳.𖦹˙ /accepttrade › /aceptarintercambio + _<solicitud>_
-.꒷🌳.𖦹˙ /waifusboard › /topwaifus › /waifustop + _<mention>_
+.꒷🌳.𖦹˙ $prefixrw › $prefixroll › $prefixrollwaifu › $prefixrf 
+.꒷🌳.𖦹˙ $prefixc › $prefixclaim › $prefixbuy + _<waifu>_
+.꒷🌳.𖦹˙ $prefixharem › $prefixmiswaifus › $prefixclaims 
+.꒷🌳.𖦹˙ $prefixsell › $prefixvender + _<waifu>_ + _<value>_
+.꒷🌳.𖦹˙ $prefixbuyc › $prefixbuycharacter › $prefixbuychar + _<waifu>_
+.꒷🌳.𖦹˙ $prefixtrade › $prefixcambiar + _<tu personaje $prefix personaje 2>_
+.꒷🌳.𖦹˙ $prefixanimelist › $prefixslist › $prefixserielist 
+.꒷🌳.𖦹˙ $prefixanimeinfo › $prefixainfo › $prefixserieinfo + _<anime>_
+.꒷🌳.𖦹˙ $prefixtiendawaifus › $prefixwshop › $prefixharemshop 
+.꒷🌳.𖦹˙ $prefixdeletechar › $prefixdelwaifu › $prefixdelchar + _<waifu>_
+.꒷🌳.𖦹˙ $prefixremoverventa › $prefixremovesale + _<waifu>_
+.꒷🌳.𖦹˙ $prefixgivechar › $prefixregalar › $prefixgivewaifu + _<mention>_ + _<waifu>_
+.꒷🌳.𖦹˙ $prefixgiveallharem + _<mention>_
+.꒷🌳.𖦹˙ $prefixginfo › $prefixinfogacha › $prefixgachainfo 
+.꒷🌳.𖦹˙ $prefixwinfo › $prefixcharinfo › $prefixcinfo + _<waifu>_
+.꒷🌳.𖦹˙ $prefixwimage › $prefixcharimage › $prefixcimage + _<waifu>_
+.꒷🌳.𖦹˙ $prefixvote › $prefixvotar + _<waifu>_
+.꒷🌳.𖦹˙ $prefixaccepttrade › $prefixaceptarintercambio + _<solicitud>_
+.꒷🌳.𖦹˙ $prefixwaifusboard › $prefixtopwaifus › $prefixwaifustop + _<mention>_
 
  .  . ︵ *ɢʀᴜᴘᴏ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /bot + _<on|off>_
-.꒷🌳.𖦹˙ /promote + _<mention>_
-.꒷🌳.𖦹˙ /demote + _<mention>_
-.꒷🌳.𖦹˙ /setprimary + _<mention>_
-.꒷🌳.𖦹˙ /warn + _<mention>_ + _<razón>_
-.꒷🌳.𖦹˙ /warns + _<mention>_
-.꒷🌳.𖦹˙ /delwarn + _<mention> <número|all>_
-.꒷🌳.𖦹˙ /setwarnlimit + _<número>_
-.꒷🌳.𖦹˙ /clear + _<delete|views>_
-.꒷🌳.𖦹˙ /setgpbaner 
-.꒷🌳.𖦹˙ /setgpname + _<text>_
-.꒷🌳.𖦹˙ /setgpdesc + _<text>_
-.꒷🌳.𖦹˙ /closet › /open 
-.꒷🌳.𖦹˙ /welcome › /bienvenidas › /alerts › /alertas › /gacha › /rpg › /economy › /economia › /adminonly › /onlyadmin › /antilinks › /antilink › /antienlaces + _<on|off>_
-.꒷🌳.𖦹˙ /groupinfo › /gp 
-.꒷🌳.𖦹˙ /tag › /hidetag + _<text>_
-.꒷🌳.𖦹˙ /kick + _<mention>_
+.꒷🌳.𖦹˙ $prefixbot + _<on|off>_
+.꒷🌳.𖦹˙ $prefixpromote + _<mention>_
+.꒷🌳.𖦹˙ $prefixdemote + _<mention>_
+.꒷🌳.𖦹˙ $prefixsetprimary + _<mention>_
+.꒷🌳.𖦹˙ $prefixwarn + _<mention>_ + _<razón>_
+.꒷🌳.𖦹˙ $prefixwarns + _<mention>_
+.꒷🌳.𖦹˙ $prefixdelwarn + _<mention> <número|all>_
+.꒷🌳.𖦹˙ $prefixsetwarnlimit + _<número>_
+.꒷🌳.𖦹˙ $prefixclear + _<delete|views>_
+.꒷🌳.𖦹˙ $prefixsetgpbaner 
+.꒷🌳.𖦹˙ $prefixsetgpname + _<text>_
+.꒷🌳.𖦹˙ $prefixsetgpdesc + _<text>_
+.꒷🌳.𖦹˙ $prefixcloset › $prefixopen 
+.꒷🌳.𖦹˙ $prefixwelcome › $prefixbienvenidas › $prefixalerts › $prefixalertas › $prefixgacha › $prefixrpg › $prefixeconomy › $prefixeconomia › $prefixadminonly › $prefixonlyadmin › $prefixantilinks › $prefixantilink › $prefixantienlaces + _<on|off>_
+.꒷🌳.𖦹˙ $prefixgroupinfo › $prefixgp 
+.꒷🌳.𖦹˙ $prefixtag › $prefixhidetag + _<text>_
+.꒷🌳.𖦹˙ $prefixkick + _<mention>_
 
  .  . ︵ *ɪᴀ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /ia › /chatgpt + _<query>_
+.꒷🌳.𖦹˙ $prefixia › $prefixchatgpt + _<query>_
 
  .  . ︵ *ɪɴғᴏ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /allmenu › /menu › /help + _<category>_
-.꒷🌳.𖦹˙ /cafi
-.꒷🌳.𖦹˙ /ayuda + _<comando>_
-.꒷🌳.𖦹˙ /infobot › /infosocket 
-.꒷🌳.𖦹˙ /creador › /owner 
-.꒷🌳.𖦹˙ /ping › /p 
-.꒷🌳.𖦹˙ /report › /reporte + _<error>_
-.꒷🌳.𖦹˙ /status 
-.꒷🌳.𖦹˙ /sug › /suggest + _<suggest>_
-.꒷🌳.𖦹˙ /invitar › /invite + _<link>_
+.꒷🌳.𖦹˙ $prefixallmenu › $prefixmenu › $prefixhelp + _<category>_
+.꒷🌳.𖦹˙ $prefixcafi
+.꒷🌳.𖦹˙ $prefixayuda + _<comando>_
+.꒷🌳.𖦹˙ $prefixinfobot › $prefixinfosocket 
+.꒷🌳.𖦹˙ $prefixcreador › $prefixowner 
+.꒷🌳.𖦹˙ $prefixping › $prefixp 
+.꒷🌳.𖦹˙ $prefixreport › $prefixreporte + _<error>_
+.꒷🌳.𖦹˙ $prefixstatus 
+.꒷🌳.𖦹˙ $prefixsug › $prefixsuggest + _<suggest>_
+.꒷🌳.𖦹˙ $prefixinvitar › $prefixinvite + _<link>_
 
  .  . ︵ *ɴsғᴡ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /xnxx + _<query|url>_
-.꒷🌳.𖦹˙ /xvideos + _<query|url>_
-.꒷🌳.𖦹˙ /danbooru › /dbooru + _<tag>_
-.꒷🌳.𖦹˙ /gelbooru › /gbooru + _<tag>_
-.꒷🌳.𖦹˙ /blowjob › /bj + _<mention>_
-.꒷🌳.𖦹˙ /boobjob + _<mention>_
-.꒷🌳.𖦹˙ /cum + _<mention>_
-.꒷🌳.𖦹˙ /fap › /paja + _<mention>_
-.꒷🌳.𖦹˙ /anal + _<mention>_
-.꒷🌳.𖦹˙ /grabboobs + _<mention>_
-.꒷🌳.𖦹˙ /footjob + _<mention>_
-.꒷🌳.𖦹˙ /grope + _<mention>_
-.꒷🌳.𖦹˙ /undress › /encuerar + _<mention>_
-.꒷🌳.𖦹˙ /sixnine › /69 + _<mention>_
-.꒷🌳.𖦹˙ /lickpussy + _<mention>_
-.꒷🌳.𖦹˙ /spank › /nalgada + _<mention>_
-.꒷🌳.𖦹˙ /fuck › /coger + _<mention>_
-.꒷🌳.𖦹˙ /suckboobs + _<mention>_
+.꒷🌳.𖦹˙ $prefixxnxx + _<query|url>_
+.꒷🌳.𖦹˙ $prefixxvideos + _<query|url>_
+.꒷🌳.𖦹˙ $prefixdanbooru › $prefixdbooru + _<tag>_
+.꒷🌳.𖦹˙ $prefixgelbooru › $prefixgbooru + _<tag>_
+.꒷🌳.𖦹˙ $prefixblowjob › $prefixbj + _<mention>_
+.꒷🌳.𖦹˙ $prefixboobjob + _<mention>_
+.꒷🌳.𖦹˙ $prefixcum + _<mention>_
+.꒷🌳.𖦹˙ $prefixfap › $prefixpaja + _<mention>_
+.꒷🌳.𖦹˙ $prefixanal + _<mention>_
+.꒷🌳.𖦹˙ $prefixgrabboobs + _<mention>_
+.꒷🌳.𖦹˙ $prefixfootjob + _<mention>_
+.꒷🌳.𖦹˙ $prefixgrope + _<mention>_
+.꒷🌳.𖦹˙ $prefixundress › $prefixencuerar + _<mention>_
+.꒷🌳.𖦹˙ $prefixsixnine › $prefix69 + _<mention>_
+.꒷🌳.𖦹˙ $prefixlickpussy + _<mention>_
+.꒷🌳.𖦹˙ $prefixspank › $prefixnalgada + _<mention>_
+.꒷🌳.𖦹˙ $prefixfuck › $prefixcoger + _<mention>_
+.꒷🌳.𖦹˙ $prefixsuckboobs + _<mention>_
 
  .  . ︵ *ᴘʀᴏғɪʟᴇ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /level › /levelup › /lvl + _<mention>_
-.꒷🌳.𖦹˙ /marry + _<mention>_
-.꒷🌳.𖦹˙ /divorce 
-.꒷🌳.𖦹˙ /profile › /perfil 
-.꒷🌳.𖦹˙ /setbirth + _<dia/mes/año|mes/dia>_
-.꒷🌳.𖦹˙ /setpasatiempo › /sethobby 
-.꒷🌳.𖦹˙ /delbirth 
-.꒷🌳.𖦹˙ /delpasatiempo › /removehobby 
-.꒷🌳.𖦹˙ /setdescription › /setdesc + _<text>_
-.꒷🌳.𖦹˙ /deldescription › /deldesc 
-.꒷🌳.𖦹˙ /setgenre + _<hombre|mujer>_
-.꒷🌳.𖦹˙ /delgenre 
+.꒷🌳.𖦹˙ $prefixlevel › $prefixlevelup › $prefixlvl + _<mention>_
+.꒷🌳.𖦹˙ $prefixmarry + _<mention>_
+.꒷🌳.𖦹˙ $prefixdivorce 
+.꒷🌳.𖦹˙ $prefixprofile › $prefixperfil 
+.꒷🌳.𖦹˙ $prefixsetbirth + _<dia$prefixmes$prefixaño|mes$prefixdia>_
+.꒷🌳.𖦹˙ $prefixsetpasatiempo › $prefixsethobby 
+.꒷🌳.𖦹˙ $prefixdelbirth 
+.꒷🌳.𖦹˙ $prefixdelpasatiempo › $prefixremovehobby 
+.꒷🌳.𖦹˙ $prefixsetdescription › $prefixsetdesc + _<text>_
+.꒷🌳.𖦹˙ $prefixdeldescription › $prefixdeldesc 
+.꒷🌳.𖦹˙ $prefixsetgenre + _<hombre|mujer>_
+.꒷🌳.𖦹˙ $prefixdelgenre 
 
  .  . ︵ *sᴇᴀʀᴄʜ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /pinterest › /pin + _<query>_
-.꒷🌳.𖦹˙ /imagen › /img + _<query>_
-.꒷🌳.𖦹˙ /aptoide › /apk › /apkdl + _<query>_
-.꒷🌳.𖦹˙ /ytsearch › /search + _<query>_
-.꒷🌳.𖦹˙ /ttsearch › /tiktoksearch › /tts + _<query>_
+.꒷🌳.𖦹˙ $prefixpinterest › $prefixpin + _<query>_
+.꒷🌳.𖦹˙ $prefiximagen › $prefiximg + _<query>_
+.꒷🌳.𖦹˙ $prefixaptoide › $prefixapk › $prefixapkdl + _<query>_
+.꒷🌳.𖦹˙ $prefixytsearch › $prefixsearch + _<query>_
+.꒷🌳.𖦹˙ $prefixttsearch › $prefixtiktoksearch › $prefixtts + _<query>_
 
  .  . ︵ *sᴏᴄᴋᴇᴛs*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /bots › /sockets 
-.꒷🌳.𖦹˙ /logout 
-.꒷🌳.𖦹˙ /code 
-.꒷🌳.𖦹˙ /self + _<on|off>_
-.꒷🌳.𖦹˙ /setbotname › /setname + _<value>_
-.꒷🌳.𖦹˙ /setbanner › /setmenubanner
-.꒷🌳.𖦹˙ /seticon
-.꒷🌳.𖦹˙ /setbotprefix + _<value>_
-.꒷🌳.𖦹˙ /setlink + _<value>_
-.꒷🌳.𖦹˙ /setbotcurrency + _<value>_
-.꒷🌳.𖦹˙ /setbotowner + _<value>_
-.꒷🌳.𖦹˙ /setchannel + _<value>_
-.꒷🌳.𖦹˙ /setusername + _<value>_
-.꒷🌳.𖦹˙ /setstatus + _<value>_
-.꒷🌳.𖦹˙ /setpfp › /setimage 
-.꒷🌳.𖦹˙ /leave 
+.꒷🌳.𖦹˙ $prefixbots › $prefixsockets 
+.꒷🌳.𖦹˙ $prefixlogout 
+.꒷🌳.𖦹˙ $prefixcode 
+.꒷🌳.𖦹˙ $prefixself + _<on|off>_
+.꒷🌳.𖦹˙ $prefixsetbotname › $prefixsetname + _<value>_
+.꒷🌳.𖦹˙ $prefixsetbanner › $prefixsetmenubanner
+.꒷🌳.𖦹˙ $prefixseticon
+.꒷🌳.𖦹˙ $prefixsetbotprefix + _<value>_
+.꒷🌳.𖦹˙ $prefixsetlink + _<value>_
+.꒷🌳.𖦹˙ $prefixsetbotcurrency + _<value>_
+.꒷🌳.𖦹˙ $prefixsetbotowner + _<value>_
+.꒷🌳.𖦹˙ $prefixsetchannel + _<value>_
+.꒷🌳.𖦹˙ $prefixsetusername + _<value>_
+.꒷🌳.𖦹˙ $prefixsetstatus + _<value>_
+.꒷🌳.𖦹˙ $prefixsetpfp › $prefixsetimage 
+.꒷🌳.𖦹˙ $prefixleave 
 
  .  . ︵ *ᴜᴛɪʟs*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ /sticker › /s  
-.꒷🌳.𖦹˙ /getpic › /pfp + _<mention>_ 
-.꒷🌳.𖦹˙ /translate + _<idioma>_ + _<text>_
-.꒷🌳.𖦹˙ /get + _<url>_
-.꒷🌳.𖦹˙ /setmeta + _<packname> | <author>_
-.꒷🌳.𖦹˙ /hd
-.꒷🌳.𖦹˙ /tourl
+.꒷🌳.𖦹˙ $prefixsticker › $prefixs  
+.꒷🌳.𖦹˙ $prefixgetpic › $prefixpfp + _<mention>_ 
+.꒷🌳.𖦹˙ $prefixtranslate + _<idioma>_ + _<text>_
+.꒷🌳.𖦹˙ $prefixget + _<url>_
+.꒷🌳.𖦹˙ $prefixsetmeta + _<packname> | <author>_
+.꒷🌳.𖦹˙ $prefixhd
+.꒷🌳.𖦹˙ $prefixtourl
 
-> *$namebot está siendo alojado desde cafirexos.com, si quieres más información usa /cafi* ૮(˶ᵔᵕᵔ˶)ა`.trim();
+> *$namebot está siendo alojado desde cafirexos.com, si quieres más información usa $prefixcafi* ૮(˶ᵔᵕᵔ˶)ა`.trim();
 
       const replacements = {
         $owner: owner ? (!isNaN(owner.replace(/@s\.whatsapp\.net$/, '')) ? `@${owner.split('@')[0]}` : owner) : 'Oculto por privacidad',
