@@ -177,7 +177,7 @@ if (botprimaryId && botprimaryId !== selfId) {
     user.usedTime = new Date()
     user2.exp = (user2.exp || 0) + Math.floor(Math.random() * 100)
     user2.name = m.pushName
-      await cmdData.run(client, m, args, command, text)
+      await cmdData.run(client, m, args, command, text, prefix)
     } catch (error) {
       await client.sendMessage(m.chat, { text: `☃️ Error al ejecutar el comando` }, { quoted: m })
     }
