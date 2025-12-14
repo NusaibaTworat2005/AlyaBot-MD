@@ -1,13 +1,13 @@
 /*
- # ------------√ ×------------
+ # ------------- √ × -------------
     # Agradecimientos :: ZyxlJs
     # Agradecimientos :: AzamiJs
     # Agradecimientos :: GataDios
 
    # Nota
-   - No borres los créditos, ni te pongas créditos que no son tuyos, respeta el trabajo de los demás.
-   - Evita vender los códigos del bot, este bot es totalmente gratuito y es de código Abierto.
- # ------------√ ×------------
+   - No elimines los créditos ni agregues créditos que no te pertenecen. Respeta el trabajo ajeno.
+   - No vendas el código del bot. Este proyecto es completamente gratuito y de código abierto.
+ # ------------- √ × -------------
 */
 
 import ws from 'ws';
