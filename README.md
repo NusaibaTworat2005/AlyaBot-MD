@@ -55,7 +55,7 @@ Si editas el bot, debes mantener los créditos principales y no borrarlos bajo n
 <details>
 <summary><strong>⛄ Información</strong> — Oficial2</summary>
 
-Quiero dejar algo completamente claro: **mi base es única y original**, desarrollada por mí desde cero.  
+Quiero dejar algo completamente claro: **mi base es única y original**, mejorada y desarrollada por mí.  
 Cualquier otra versión que circule —incluyendo **Diamond** y **Megumin**— son **copias no autorizadas** que no representan mi trabajo real ni cuentan con mi aprobación.
 
 Mi estructura, mi lógica y mi diseño pertenecen a mi proyecto, y cualquier intento de replicarlo sin permiso no tiene validez oficial.
