@@ -3,7 +3,7 @@ import { resolveLidToRealJid } from "../../lib/utils.js"
 export default {
   command: ['balance', 'bal'],
   category: 'rpg',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     const db = global.db.data
     const chatId = m.chat
     const chatData = db.chats[chatId]
@@ -30,7 +30,7 @@ export default {
 ⚿ Banco › *¥${user.bank?.toLocaleString() || 0} ${monedas}*
 ⛁ Total › *¥${total.toLocaleString()} ${monedas}*
 
-> _Para proteger tu dinero, ¡depósitalo en el banco usando ${prefa}deposit!_`
+> _Para proteger tu dinero, ¡depósitalo en el banco usando ${prefix}deposit!_`
 
     await client.sendMessage(chatId, { text: bal }, { quoted: m })
   }
