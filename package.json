@@ -25,6 +25,7 @@
     "awesome-phonenumber": "^4.4.0",
     "sharp": "latest",
     "yargs": "^18.0.0",
+    "boxen": "latest",
     "better-sqlite3": "^12.4.1",
     "axios": "^0.24.0",
     "chalk": "^4.1.2",
