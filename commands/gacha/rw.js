@@ -30,7 +30,7 @@ const obtenerPersonajes = () => {
 }
 
 const reservarPersonaje = (chatId, userId, personaje, db) => {
-  db.chats[chatId].personajesReservados ||= []
+ // db.chats[chatId].personajesReservados ||= []
   db.chats[chatId].personajesReservados.push({ userId, ...personaje })
 }
 
@@ -52,10 +52,10 @@ export default {
     const chatId = m.chat
     const userId = m.sender
     const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
-    const chat = (db.chats[chatId] ||= { users: {}, personajesReservados: [] })
-    chat.users ||= {}
-    chat.personajesReservados ||= []
-    const user = (chat.users[userId] ||= {})
+    const chat = db.chats[chatId] || {}
+   // chat.users ||= {}
+  // chat.personajesReservados ||= []
+    const user = chat.users[userId] || {}
     const now = Date.now()
 
     if (chat.adminonly || !chat.gacha)
