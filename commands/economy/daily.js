@@ -14,10 +14,6 @@ export default {
     if (chat.adminonly || !chat.rpg)
       return m.reply(`✎ Estos comandos están desactivados en este grupo.`)
 
-    user.dailyStreak ??= 0
-    user.lastDaily ??= 0
-    user.coins ??= 0
-
     const timeSinceLast = now - user.lastDaily
 
     if (timeSinceLast < oneDay) {
