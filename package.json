@@ -15,6 +15,11 @@
     "multi-device"
   ],
   "author": "DevZyxlJs",
+   "collaborators": {
+   "col1": "Legna-chan",
+   "col1": "Alba070503",
+   "col1": "The-King-Destroy"
+   },
   "license": "MIT",
   "engines": {
     "node": ">=21.7.3",
