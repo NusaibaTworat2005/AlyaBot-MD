@@ -161,8 +161,7 @@ if (botprimaryId && botprimaryId !== selfId) {
     // await client.sendPresenceUpdate('composing', m.chat)
     const cmdData = global.comandos.get(command)
     if (!cmdData) {
-    await client.readMessages([m.key])
-    // return m.reply(`💣 El comando *${command}* no existe.\n> Usa *${prefix}help* para ver la lista de comandos disponibles.`)
+    return
    }
     const comando = m.text.slice(prefix.length);
 if (cmdData && typeof cmdData === 'object' && cmdData.isOwner && !global.owner.map(num => num + '@s.whatsapp.net').includes(sender)
