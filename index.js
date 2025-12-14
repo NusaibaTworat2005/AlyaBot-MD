@@ -27,6 +27,7 @@ import crypto from 'crypto';
 import chalk from "chalk";
 import fs from "fs";
 import path from "path";
+import boxen from 'boxen';
 import readline from "readline";
 import os from "os";
 import qrcode from "qrcode-terminal";
@@ -240,11 +241,7 @@ console.log(chalk.bold.redBright(`Por favor, Ingrese el número de WhatsApp.\n${
     }
 
     if (connection == "open") {
-                  console.log(
-        chalk.bold.greenBright(
-          '\n✩ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈✦ 𝗢𝗡𝗟𝗜𝗡𝗘 ✦┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✩\n│\n│★ CONEXIÓN EXITOSA CON WHATSAPP 🌷\n│\n✩ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈✦ ✅  ✦┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✩'
-        )
-      )
+           console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))
     }
 
 
