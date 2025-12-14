@@ -1,12 +1,12 @@
 export default {
   command: ['setgenre'],
   category: 'rpg',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     const user = global.db.data.users[m.sender]
     const input = args.join(' ').toLowerCase()
 
     if (user.genre)
-      return m.reply(`《✧》 Ya tienes un género. Usa › *${prefa}delgenre* para eliminarlo.`)
+      return m.reply(`《✧》 Ya tienes un género. Usa › *${prefix}delgenre* para eliminarlo.`)
 
     if (!input)
       return m.reply(
