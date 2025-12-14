@@ -1,7 +1,7 @@
 export default {
   command: ['cf', 'flip', 'coinflip'],
   category: 'rpg',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     const chat = global.db.data.chats[m.chat]
     const user = chat.users[m.sender]
     const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
@@ -16,7 +16,7 @@ export default {
 
     if (!eleccion || isNaN(cantidad)) {
       return m.reply(
-        `《✧》 Elige una opción ( *Cara o Cruz* ) y la cantidad a apostar, para lanzar la moneda.\n\n\`Ejemplo\`\n> *${prefa}cf* 2000 cara`,
+        `《✧》 Elige una opción ( *Cara o Cruz* ) y la cantidad a apostar, para lanzar la moneda.\n\n\`Ejemplo\`\n> *${prefix + command}* 2000 cara`,
       )
     }
 
