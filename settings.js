@@ -15,7 +15,7 @@
 import fs from 'fs';
 import chalk from 'chalk';
 
-global.owner = ['5492916450307', '59169082575', '573019448245']
+global.owner = ['5492916450307', '59169082575', '573019448245', '5216671548329']
 
 global.sessionName = 'Sessions/Owner'
 global.version = '^3.0'
@@ -34,7 +34,7 @@ global.bot = {
   web: 'https://bot.stellarwa.xyz'
 }
 
-global.mods = ['59169082575', '5492916450307', '573019448245']
+global.mods = ['59169082575', '5492916450307', '573019448245', '5216671548328']
 
 global.mess = {
   socket: '🌱 Este comando solo puede ser ejecutado por un Socket.',
