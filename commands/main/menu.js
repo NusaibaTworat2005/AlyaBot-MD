@@ -53,73 +53,73 @@ const time = client.uptime ? formatearMs(Date.now() - client.uptime) : "Desconoc
 乂 *ʟɪsᴛᴀ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏs* 乂
 
  .  . ︵ *ᴀɴɪᴍᴇ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ $prefixpeek + _<mention>_
-.꒷🌳.𖦹˙ $prefixcomfort + _<mention>_
-.꒷🌳.𖦹˙ $prefixthinkhard + _<mention>_
-.꒷🌳.𖦹˙ $prefixcurious + _<mention>_
-.꒷🌳.𖦹˙ $prefixsniff + _<mention>_
-.꒷🌳.𖦹˙ $prefixstare + _<mention>_
-.꒷🌳.𖦹˙ $prefixtrip + _<mention>_
-.꒷🌳.𖦹˙ $prefixblowkiss + _<mention>_
-.꒷🌳.𖦹˙ $prefixsnuggle + _<mention>_
-.꒷🌳.𖦹˙ $prefixangry + _<mention>_
-.꒷🌳.𖦹˙ $prefixbleh + _<mention>_
-.꒷🌳.𖦹˙ $prefixbored › $prefixaburrido + _<mention>_
-.꒷🌳.𖦹˙ $prefixclap + _<mention>_
-.꒷🌳.𖦹˙ $prefixcoffee › $prefixcafe + _<mention>_
-.꒷🌳.𖦹˙ $prefixcold + _<mention>_
-.꒷🌳.𖦹˙ $prefixsing + _<mention>_
-.꒷🌳.𖦹˙ $prefixtickle + _<mention>_
-.꒷🌳.𖦹˙ $prefixscream + _<mention>_
-.꒷🌳.𖦹˙ $prefixpush + _<mention>_
-.꒷🌳.𖦹˙ $prefixnope + _<mention>_
-.꒷🌳.𖦹˙ $prefixjump + _<mention>_
-.꒷🌳.𖦹˙ $prefixheat + _<mention>_
-.꒷🌳.𖦹˙ $prefixgaming + _<mention>_
-.꒷🌳.𖦹˙ $prefixdraw + _<mention>_
-.꒷🌳.𖦹˙ $prefixcall + _<mention>_
-.꒷🌳.𖦹˙ $prefixdramatic › $prefixdrama + _<mention>_
-.꒷🌳.𖦹˙ $prefixdrunk + _<mention>_
-.꒷🌳.𖦹˙ $prefiximpregnate › $prefixpreg + _<mention>_
-.꒷🌳.𖦹˙ $prefixkisscheek › $prefixbeso + _<mention>_
-.꒷🌳.𖦹˙ $prefixlaugh + _<mention>_
-.꒷🌳.𖦹˙ $prefixlove › $prefixamor + _<mention>_
-.꒷🌳.𖦹˙ $prefixpout + _<mention>_
-.꒷🌳.𖦹˙ $prefixpunch + _<mention>_
-.꒷🌳.𖦹˙ $prefixrun › $prefixcorrer + _<mention>_
-.꒷🌳.𖦹˙ $prefixsad › $prefixtriste + _<mention>_
-.꒷🌳.𖦹˙ $prefixscared + _<mention>_
-.꒷🌳.𖦹˙ $prefixseduce + _<mention>_
-.꒷🌳.𖦹˙ $prefixshy › $prefixtimido + _<mention>_
-.꒷🌳.𖦹˙ $prefixsleep + _<mention>_
-.꒷🌳.𖦹˙ $prefixsmoke › $prefixfumar + _<mention>_
-.꒷🌳.𖦹˙ $prefixspit › $prefixescupir + _<mention>_
-.꒷🌳.𖦹˙ $prefixstep › $prefixpisar + _<mention>_
-.꒷🌳.𖦹˙ $prefixthink + _<mention>_
-.꒷🌳.𖦹˙ $prefixwalk + _<mention>_
-.꒷🌳.𖦹˙ $prefixhug + _<mention>_
-.꒷🌳.𖦹˙ $prefixkill + _<mention>_
-.꒷🌳.𖦹˙ $prefixeat › $prefixnom › $prefixcomer + _<mention>_
-.꒷🌳.𖦹˙ $prefixkiss › $prefixmuak + _<mention>_
-.꒷🌳.𖦹˙ $prefixwink + _<mention>_
-.꒷🌳.𖦹˙ $prefixpat + _<mention>_
-.꒷🌳.𖦹˙ $prefixhappy › $prefixfeliz + _<mention>_
-.꒷🌳.𖦹˙ $prefixbully + _<mention>_
-.꒷🌳.𖦹˙ $prefixbite › $prefixmorder + _<mention>_
-.꒷🌳.𖦹˙ $prefixblush + _<mention>_
-.꒷🌳.𖦹˙ $prefixwave + _<mention>_
-.꒷🌳.𖦹˙ $prefixbath + _<mention>_
-.꒷🌳.𖦹˙ $prefixsmug + _<mention>_
-.꒷🌳.𖦹˙ $prefixsmile + _<mention>_
-.꒷🌳.𖦹˙ $prefixhighfive + _<mention>_
-.꒷🌳.𖦹˙ $prefixhandhold + _<mention>_
-.꒷🌳.𖦹˙ $prefixcringe + _<mention>_
-.꒷🌳.𖦹˙ $prefixbonk + _<mention>_
-.꒷🌳.𖦹˙ $prefixcry + _<mention>_
-.꒷🌳.𖦹˙ $prefixlick + _<mention>_
-.꒷🌳.𖦹˙ $prefixslap + _<mention>_
-.꒷🌳.𖦹˙ $prefixdance + _<mention>_
-.꒷🌳.𖦹˙ $prefixcuddle + _<mention>_
+.꒷🎁.𖦹˙ $prefixpeek + _<mention>_
+.꒷🎁.𖦹˙ $prefixcomfort + _<mention>_
+.꒷🎁.𖦹˙ $prefixthinkhard + _<mention>_
+.꒷🎁.𖦹˙ $prefixcurious + _<mention>_
+.꒷🎁.𖦹˙ $prefixsniff + _<mention>_
+.꒷🎁.𖦹˙ $prefixstare + _<mention>_
+.꒷🎁.𖦹˙ $prefixtrip + _<mention>_
+.꒷🎁.𖦹˙ $prefixblowkiss + _<mention>_
+.꒷🎁.𖦹˙ $prefixsnuggle + _<mention>_
+.꒷🎁.𖦹˙ $prefixangry + _<mention>_
+.꒷🎁.𖦹˙ $prefixbleh + _<mention>_
+.꒷🎁.𖦹˙ $prefixbored › $prefixaburrido + _<mention>_
+.꒷🎁.𖦹˙ $prefixclap + _<mention>_
+.꒷🎁.𖦹˙ $prefixcoffee › $prefixcafe + _<mention>_
+.꒷🎁.𖦹˙ $prefixcold + _<mention>_
+.꒷🎁.𖦹˙ $prefixsing + _<mention>_
+.꒷🎁.𖦹˙ $prefixtickle + _<mention>_
+.꒷🎁.𖦹˙ $prefixscream + _<mention>_
+.꒷🎁.𖦹˙ $prefixpush + _<mention>_
+.꒷🎁.𖦹˙ $prefixnope + _<mention>_
+.꒷🎁.𖦹˙ $prefixjump + _<mention>_
+.꒷🎁.𖦹˙ $prefixheat + _<mention>_
+.꒷🎁.𖦹˙ $prefixgaming + _<mention>_
+.꒷🎁.𖦹˙ $prefixdraw + _<mention>_
+.꒷🎁.𖦹˙ $prefixcall + _<mention>_
+.꒷🎁.𖦹˙ $prefixdramatic › $prefixdrama + _<mention>_
+.꒷🎁.𖦹˙ $prefixdrunk + _<mention>_
+.꒷🎁.𖦹˙ $prefiximpregnate › $prefixpreg + _<mention>_
+.꒷🎁.𖦹˙ $prefixkisscheek › $prefixbeso + _<mention>_
+.꒷🎁.𖦹˙ $prefixlaugh + _<mention>_
+.꒷🎁.𖦹˙ $prefixlove › $prefixamor + _<mention>_
+.꒷🎁.𖦹˙ $prefixpout + _<mention>_
+.꒷🎁.𖦹˙ $prefixpunch + _<mention>_
+.꒷🎁.𖦹˙ $prefixrun › $prefixcorrer + _<mention>_
+.꒷🎁.𖦹˙ $prefixsad › $prefixtriste + _<mention>_
+.꒷🎁.𖦹˙ $prefixscared + _<mention>_
+.꒷🎁.𖦹˙ $prefixseduce + _<mention>_
+.꒷🎁.𖦹˙ $prefixshy › $prefixtimido + _<mention>_
+.꒷🎁.𖦹˙ $prefixsleep + _<mention>_
+.꒷🎁.𖦹˙ $prefixsmoke › $prefixfumar + _<mention>_
+.꒷🎁.𖦹˙ $prefixspit › $prefixescupir + _<mention>_
+.꒷🎁.𖦹˙ $prefixstep › $prefixpisar + _<mention>_
+.꒷🎁.𖦹˙ $prefixthink + _<mention>_
+.꒷🎁.𖦹˙ $prefixwalk + _<mention>_
+.꒷🎁.𖦹˙ $prefixhug + _<mention>_
+.꒷🎁.𖦹˙ $prefixkill + _<mention>_
+.꒷🎁.𖦹˙ $prefixeat › $prefixnom › $prefixcomer + _<mention>_
+.꒷🎁.𖦹˙ $prefixkiss › $prefixmuak + _<mention>_
+.꒷🎁.𖦹˙ $prefixwink + _<mention>_
+.꒷🎁.𖦹˙ $prefixpat + _<mention>_
+.꒷🎁.𖦹˙ $prefixhappy › $prefixfeliz + _<mention>_
+.꒷🎁.𖦹˙ $prefixbully + _<mention>_
+.꒷🎁.𖦹˙ $prefixbite › $prefixmorder + _<mention>_
+.꒷🎁.𖦹˙ $prefixblush + _<mention>_
+.꒷🎁.𖦹˙ $prefixwave + _<mention>_
+.꒷🎁.𖦹˙ $prefixbath + _<mention>_
+.꒷🎁.𖦹˙ $prefixsmug + _<mention>_
+.꒷🎁.𖦹˙ $prefixsmile + _<mention>_
+.꒷🎁.𖦹˙ $prefixhighfive + _<mention>_
+.꒷🎁.𖦹˙ $prefixhandhold + _<mention>_
+.꒷🎁.𖦹˙ $prefixcringe + _<mention>_
+.꒷🎁.𖦹˙ $prefixbonk + _<mention>_
+.꒷🎁.𖦹˙ $prefixcry + _<mention>_
+.꒷🎁.𖦹˙ $prefixlick + _<mention>_
+.꒷🎁.𖦹˙ $prefixslap + _<mention>_
+.꒷🎁.𖦹˙ $prefixdance + _<mention>_
+.꒷🎁.𖦹˙ $prefixcuddle + _<mention>_
 
  .  . ︵ *ᴅᴏᴡɴʟᴏᴀᴅs*.  ◌Ⳋ𝅄
 .꒷🎅.𖦹˙ $prefixfacebook › $prefixfb + _<url>_
