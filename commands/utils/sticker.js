@@ -36,6 +36,6 @@ await fs.unlinkSync(encmedia)
 return client.reply(m.chat, '✐ Por favor, envia una imagen o video para hacer un sticker.', m);
 }
 } catch (e) {
-await client.sendVideoAsSticker(m.chat, media, m, { packname: text1, author: text2})
+m.reply(msgglobal + e)
 }}
 };
