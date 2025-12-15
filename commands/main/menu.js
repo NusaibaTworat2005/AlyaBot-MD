@@ -195,84 +195,84 @@ const time = client.uptime ? formatearMs(Date.now() - client.uptime) : "Desconoc
 .꒷🌟.𖦹˙ $prefixia › $prefixchatgpt + _<query>_
 
  .  . ︵ *ɪɴғᴏ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ $prefixallmenu › $prefixmenu › $prefixhelp + _<category>_
-.꒷🌳.𖦹˙ $prefixcafi
-.꒷🌳.𖦹˙ $prefixayuda + _<comando>_
-.꒷🌳.𖦹˙ $prefixinfobot › $prefixinfosocket 
-.꒷🌳.𖦹˙ $prefixcreador › $prefixowner 
-.꒷🌳.𖦹˙ $prefixping › $prefixp 
-.꒷🌳.𖦹˙ $prefixreport › $prefixreporte + _<error>_
-.꒷🌳.𖦹˙ $prefixstatus 
-.꒷🌳.𖦹˙ $prefixsug › $prefixsuggest + _<suggest>_
-.꒷🌳.𖦹˙ $prefixinvitar › $prefixinvite + _<link>_
+.꒷🔔.𖦹˙ $prefixallmenu › $prefixmenu › $prefixhelp + _<category>_
+.꒷🔔.𖦹˙ $prefixcafi
+.꒷🔔.𖦹˙ $prefixayuda + _<comando>_
+.꒷🔔.𖦹˙ $prefixinfobot › $prefixinfosocket 
+.꒷🔔.𖦹˙ $prefixcreador › $prefixowner 
+.꒷🔔.𖦹˙ $prefixping › $prefixp 
+.꒷🔔.𖦹˙ $prefixreport › $prefixreporte + _<error>_
+.꒷🔔.𖦹˙ $prefixstatus 
+.꒷🔔.𖦹˙ $prefixsug › $prefixsuggest + _<suggest>_
+.꒷🔔.𖦹˙ $prefixinvitar › $prefixinvite + _<link>_
 
  .  . ︵ *ɴsғᴡ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ $prefixxnxx + _<query|url>_
-.꒷🌳.𖦹˙ $prefixxvideos + _<query|url>_
-.꒷🌳.𖦹˙ $prefixdanbooru › $prefixdbooru + _<tag>_
-.꒷🌳.𖦹˙ $prefixgelbooru › $prefixgbooru + _<tag>_
-.꒷🌳.𖦹˙ $prefixblowjob › $prefixbj + _<mention>_
-.꒷🌳.𖦹˙ $prefixboobjob + _<mention>_
-.꒷🌳.𖦹˙ $prefixcum + _<mention>_
-.꒷🌳.𖦹˙ $prefixfap › $prefixpaja + _<mention>_
-.꒷🌳.𖦹˙ $prefixanal + _<mention>_
-.꒷🌳.𖦹˙ $prefixgrabboobs + _<mention>_
-.꒷🌳.𖦹˙ $prefixfootjob + _<mention>_
-.꒷🌳.𖦹˙ $prefixgrope + _<mention>_
-.꒷🌳.𖦹˙ $prefixundress › $prefixencuerar + _<mention>_
-.꒷🌳.𖦹˙ $prefixsixnine › $prefix69 + _<mention>_
-.꒷🌳.𖦹˙ $prefixlickpussy + _<mention>_
-.꒷🌳.𖦹˙ $prefixspank › $prefixnalgada + _<mention>_
-.꒷🌳.𖦹˙ $prefixfuck › $prefixcoger + _<mention>_
-.꒷🌳.𖦹˙ $prefixsuckboobs + _<mention>_
+.꒷🥛.𖦹˙ $prefixxnxx + _<query|url>_
+.꒷🥛.𖦹˙ $prefixxvideos + _<query|url>_
+.꒷🥛.𖦹˙ $prefixdanbooru › $prefixdbooru + _<tag>_
+.꒷🥛.𖦹˙ $prefixgelbooru › $prefixgbooru + _<tag>_
+.꒷🥛.𖦹˙ $prefixblowjob › $prefixbj + _<mention>_
+.꒷🥛.𖦹˙ $prefixboobjob + _<mention>_
+.꒷🥛.𖦹˙ $prefixcum + _<mention>_
+.꒷🥛.𖦹˙ $prefixfap › $prefixpaja + _<mention>_
+.꒷🥛.𖦹˙ $prefixanal + _<mention>_
+.꒷🥛.𖦹˙ $prefixgrabboobs + _<mention>_
+.꒷🥛.𖦹˙ $prefixfootjob + _<mention>_
+.꒷🥛.𖦹˙ $prefixgrope + _<mention>_
+.꒷🥛.𖦹˙ $prefixundress › $prefixencuerar + _<mention>_
+.꒷🥛.𖦹˙ $prefixsixnine › $prefix69 + _<mention>_
+.꒷🥛.𖦹˙ $prefixlickpussy + _<mention>_
+.꒷🥛.𖦹˙ $prefixspank › $prefixnalgada + _<mention>_
+.꒷🥛.𖦹˙ $prefixfuck › $prefixcoger + _<mention>_
+.꒷🥛.𖦹˙ $prefixsuckboobs + _<mention>_
 
  .  . ︵ *ᴘʀᴏғɪʟᴇ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ $prefixlevel › $prefixlevelup › $prefixlvl + _<mention>_
-.꒷🌳.𖦹˙ $prefixmarry + _<mention>_
-.꒷🌳.𖦹˙ $prefixdivorce 
-.꒷🌳.𖦹˙ $prefixprofile › $prefixperfil 
-.꒷🌳.𖦹˙ $prefixsetbirth + _<dia$prefixmes$prefixaño|mes$prefixdia>_
-.꒷🌳.𖦹˙ $prefixsetpasatiempo › $prefixsethobby 
-.꒷🌳.𖦹˙ $prefixdelbirth 
-.꒷🌳.𖦹˙ $prefixdelpasatiempo › $prefixremovehobby 
-.꒷🌳.𖦹˙ $prefixsetdescription › $prefixsetdesc + _<text>_
-.꒷🌳.𖦹˙ $prefixdeldescription › $prefixdeldesc 
-.꒷🌳.𖦹˙ $prefixsetgenre + _<hombre|mujer>_
-.꒷🌳.𖦹˙ $prefixdelgenre 
+.꒷🍰.𖦹˙ $prefixlevel › $prefixlevelup › $prefixlvl + _<mention>_
+.꒷🍰.𖦹˙ $prefixmarry + _<mention>_
+.꒷🍰.𖦹˙ $prefixdivorce 
+.꒷🍰.𖦹˙ $prefixprofile › $prefixperfil 
+.꒷🍰.𖦹˙ $prefixsetbirth + _<dia$prefixmes$prefixaño|mes$prefixdia>_
+.꒷🍰.𖦹˙ $prefixsetpasatiempo › $prefixsethobby 
+.꒷🍰.𖦹˙ $prefixdelbirth 
+.꒷🍰.𖦹˙ $prefixdelpasatiempo › $prefixremovehobby 
+.꒷🍰.𖦹˙ $prefixsetdescription › $prefixsetdesc + _<text>_
+.꒷🍰.𖦹˙ $prefixdeldescription › $prefixdeldesc 
+.꒷🍰.𖦹˙ $prefixsetgenre + _<hombre|mujer>_
+.꒷🍰.𖦹˙ $prefixdelgenre 
 
  .  . ︵ *sᴇᴀʀᴄʜ*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ $prefixpinterest › $prefixpin + _<query>_
-.꒷🌳.𖦹˙ $prefiximagen › $prefiximg + _<query>_
-.꒷🌳.𖦹˙ $prefixaptoide › $prefixapk › $prefixapkdl + _<query>_
-.꒷🌳.𖦹˙ $prefixytsearch › $prefixsearch + _<query>_
-.꒷🌳.𖦹˙ $prefixttsearch › $prefixtiktoksearch › $prefixtts + _<query>_
+.꒷🍪.𖦹˙ $prefixpinterest › $prefixpin + _<query>_
+.꒷🍪.𖦹˙ $prefiximagen › $prefiximg + _<query>_
+.꒷🍪.𖦹˙ $prefixaptoide › $prefixapk › $prefixapkdl + _<query>_
+.꒷🍪.𖦹˙ $prefixytsearch › $prefixsearch + _<query>_
+.꒷🍪.𖦹˙ $prefixttsearch › $prefixtiktoksearch › $prefixtts + _<query>_
 
  .  . ︵ *sᴏᴄᴋᴇᴛs*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ $prefixbots › $prefixsockets 
-.꒷🌳.𖦹˙ $prefixlogout 
-.꒷🌳.𖦹˙ $prefixcode 
-.꒷🌳.𖦹˙ $prefixself + _<on|off>_
-.꒷🌳.𖦹˙ $prefixsetbotname › $prefixsetname + _<value>_
-.꒷🌳.𖦹˙ $prefixsetbanner › $prefixsetmenubanner
-.꒷🌳.𖦹˙ $prefixseticon
-.꒷🌳.𖦹˙ $prefixsetbotprefix + _<value>_
-.꒷🌳.𖦹˙ $prefixsetlink + _<value>_
-.꒷🌳.𖦹˙ $prefixsetbotcurrency + _<value>_
-.꒷🌳.𖦹˙ $prefixsetbotowner + _<value>_
-.꒷🌳.𖦹˙ $prefixsetchannel + _<value>_
-.꒷🌳.𖦹˙ $prefixsetusername + _<value>_
-.꒷🌳.𖦹˙ $prefixsetstatus + _<value>_
-.꒷🌳.𖦹˙ $prefixsetpfp › $prefixsetimage 
-.꒷🌳.𖦹˙ $prefixleave 
+.꒷🦌.𖦹˙ $prefixbots › $prefixsockets 
+.꒷🦌.𖦹˙ $prefixlogout 
+.꒷🦌.𖦹˙ $prefixcode 
+.꒷🦌.𖦹˙ $prefixself + _<on|off>_
+.꒷🦌.𖦹˙ $prefixsetbotname › $prefixsetname + _<value>_
+.꒷🦌.𖦹˙ $prefixsetbanner › $prefixsetmenubanner
+.꒷🦌.𖦹˙ $prefixseticon
+.꒷🦌.𖦹˙ $prefixsetbotprefix + _<value>_
+.꒷🦌.𖦹˙ $prefixsetlink + _<value>_
+.꒷🦌.𖦹˙ $prefixsetbotcurrency + _<value>_
+.꒷🦌.𖦹˙ $prefixsetbotowner + _<value>_
+.꒷🦌.𖦹˙ $prefixsetchannel + _<value>_
+.꒷🦌.𖦹˙ $prefixsetusername + _<value>_
+.꒷🦌.𖦹˙ $prefixsetstatus + _<value>_
+.꒷🦌.𖦹˙ $prefixsetpfp › $prefixsetimage 
+꒷🦌.𖦹˙ $prefixleave 
 
  .  . ︵ *ᴜᴛɪʟs*.  ◌Ⳋ𝅄
-.꒷🌳.𖦹˙ $prefixsticker › $prefixs  
-.꒷🌳.𖦹˙ $prefixgetpic › $prefixpfp + _<mention>_ 
-.꒷🌳.𖦹˙ $prefixtranslate + _<idioma>_ + _<text>_
-.꒷🌳.𖦹˙ $prefixget + _<url>_
-.꒷🌳.𖦹˙ $prefixsetmeta + _<packname> | <author>_
-.꒷🌳.𖦹˙ $prefixhd
-.꒷🌳.𖦹˙ $prefixtourl
+.꒷❄️.𖦹˙ $prefixsticker › $prefixs  
+.꒷❄️.𖦹˙ $prefixgetpic › $prefixpfp + _<mention>_ 
+.꒷❄️.𖦹˙ $prefixtranslate + _<idioma>_ + _<text>_
+.꒷❄️.𖦹˙ $prefixget + _<url>_
+.꒷❄️.𖦹˙ $prefixsetmeta + _<packname> | <author>_
+.꒷❄️.𖦹˙ $prefixhd
+.꒷❄️.𖦹˙ $prefixtourl
 
 > *$namebot está siendo alojado desde cafirexos.com, si quieres más información usa $prefixcafi* ૮(˶ᵔᵕᵔ˶)ა`.trim();
 
