@@ -1668,5 +1668,12 @@
      "gender": "Mujer",
      "source": "Black Bullet",
      "keyword": "aihara_enju" 
+  },
+  {
+    "name": "Nagisa Kubo",
+    "value": "850",
+    "gender": "Mujer",
+    "source": "Kubo-san wa Mob wo Yurusanai",
+    "keyword": "kubo_nagisa" 
   }
 ]
