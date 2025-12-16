@@ -12,7 +12,7 @@
 
 <div align="center">
 
-[![](https://moe-counter.glitch.me/get/@:DevZyxlJs/AlyaBot-MD?theme=aso)](https://bot.stellarwa.xyz)
+[![](https://moe-counter.glitch.me/get/@:DevZyxlJs?theme=booru-jaypee)](https://bot.stellarwa.xyz)
 
 </div>
 
