@@ -38,7 +38,7 @@ export default {
 
 const time = client.uptime ? formatearMs(Date.now() - client.uptime) : "Desconocido"
 
-      let menu = `> *¡ʜᴏʟᴀ!* $sender, como está tu día?, mucho gusto mi nombre es *$namebot*
+      let menu = `> @${m.sender.split('@')[0]} *¡ʜᴏʟᴀ!* $sender, como está tu día?, mucho gusto mi nombre es *$namebot*
 
 *┏━ ${botname} ━⊜*
 ┃⋄ 📅 *Fecha* :: $tiempo, $tiempo2
