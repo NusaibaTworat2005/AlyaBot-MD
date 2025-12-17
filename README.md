@@ -143,8 +143,8 @@ npm start
 
 ### 🪶 Colaboradores
 <a href="https://github.com/DevZyxlJs/AlyaBot-MD/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD" /> 
-</a> 
+  <img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD&v=2" />
+</a>
 
 ### 🌺 Creditos Principales
 [![Carlos](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs) [![GataDios](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li)
