@@ -142,7 +142,7 @@ npm start
 ---
 
 ### 🪶 Colaboradores
-<a href="https://github.com/DevZyxlJs/AlyaBot-MD/graphs/contributors">
+<a href="https://api.stellarwa.xyz">
   <img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD&v=2" />
 </a>
 
