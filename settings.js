@@ -18,7 +18,7 @@ import chalk from 'chalk';
 global.owner = ['5492916450307', '59169082575', '573019448245', '5216677510398']
 
 global.sessionName = 'Sessions/Owner'
-global.version = '^3.0'
+global.version = '^1.0'
 global.pairing_code = true
 global.number_bot = ''
 global.msgglobal = '[Error: *TypeError*] fetch failed'
