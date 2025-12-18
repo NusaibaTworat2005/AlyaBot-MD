@@ -20,7 +20,7 @@ import {
   useMultiFileAuthState,
   fetchLatestBaileysVersion,
   jidDecode,
-  DisconnectReason,
+  DisconnectReason
 } from "@whiskeysockets/baileys";
 import cfonts from 'cfonts';
 import pino from "pino";
@@ -30,257 +30,140 @@ import path from "path";
 import boxen from 'boxen';
 import readline from "readline";
 import os from "os";
-import qrcode from "qrcode-terminal";
-import parsePhoneNumber from "awesome-phonenumber";
-import { smsg } from "./lib/message.js";
-import db from "./lib/system/database.js";
-import { startSubBot } from './lib/subs.js';
 import { exec } from "child_process";
+import { smsg } from "./lib/message.js";
+import { startSubBot } from './lib/subs.js';
 
 const log = {
-  info: (msg) => console.log(chalk.bgBlue.white.bold(`INFO`), chalk.white(msg)),
-  success: (msg) => console.log(chalk.bgGreen.white.bold(`SUCCESS`), chalk.greenBright(msg)),
-  warn: (msg) => console.log(chalk.bgYellowBright.blueBright.bold(`WARNING`), chalk.yellow(msg)),
-  error: (msg) => console.log(chalk.bgRed.white.bold(`ERROR`), chalk.redBright(msg)),
+  info: msg => console.log(chalk.bgBlue.white.bold('INFO'), chalk.white(msg)),
+  success: msg => console.log(chalk.bgGreen.white.bold('SUCCESS'), chalk.greenBright(msg)),
+  warn: msg => console.log(chalk.bgYellowBright.blueBright.bold('WARNING'), chalk.yellow(msg)),
+  error: msg => console.log(chalk.bgRed.white.bold('ERROR'), chalk.redBright(msg))
 };
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 });
 
-const question = (text) => {
-  return new Promise((resolve) => {
-    rl.question(text, (answer) => {
-      resolve(answer.trim());
-    });
-  });
+const askQuestion = async (text) => {
+  return new Promise(resolve => rl.question(text, answer => resolve(answer.trim())));
 };
 
-const DIGITS = (s = "") => String(s).replace(/\D/g, "");
-
-function normalizePhoneForPairing(input) {
-  let s = DIGITS(input);
-  if (!s) return "";
+const normalizePhoneForPairing = (input) => {
+  let s = input.replace(/\D/g, "");
   if (s.startsWith("0")) s = s.replace(/^0+/, "");
-  if (s.length === 10 && s.startsWith("3")) {
-    s = "57" + s;
-  }
-  if (s.startsWith("52") && !s.startsWith("521") && s.length >= 12) {
-    s = "521" + s.slice(2);
-  }
-  if (s.startsWith("54") && !s.startsWith("549") && s.length >= 11) {
-    s = "549" + s.slice(2);
-  }
+  if (s.length === 10 && s.startsWith("3")) s = "57" + s;
+  if (s.startsWith("52") && !s.startsWith("521") && s.length >= 12) s = "521" + s.slice(2);
+  if (s.startsWith("54") && !s.startsWith("549") && s.length >= 11) s = "549" + s.slice(2);
   return s;
-}
-
-const isValidPhoneNumber = (input) => {
-  const regex = /^[0-9\s\+\-\(\)]+$/;
-  return regex.test(input);
 };
 
-cfonts.say('alya san', {
-  align: 'center',
-  gradient: ['red', 'blue'] 
-});
-cfonts.say('WhatsApp Bot', {
-  font: 'console',
-  align: 'center',
-  gradient: ['blue', 'magenta']
-});
+const isValidPhoneNumber = (input) => /^[0-9\s\+\-\(\)]+$/.test(input);
 
-const BOT_TYPES = [
-  { name: 'SubBot', folder: './Sessions/Subs', starter: startSubBot }
-];
+const displayLoadingMessage = () => {
+  console.log(chalk.bold.redBright(`Por favor, Ingrese el número de WhatsApp.\n` +
+      `${chalk.bold.yellowBright("Ejemplo: +57301******")}\n` +
+      `${chalk.bold.magentaBright('---> ')} `));
+};
 
-global.conns = global.conns || [];
-const reconnecting = new Set();
-
-async function loadBots() {
-  for (const { name, folder, starter } of BOT_TYPES) {
-    if (!fs.existsSync(folder)) continue;
-    const botIds = fs.readdirSync(folder);
-    for (const userId of botIds) {
-      const sessionPath = path.join(folder, userId);
-      const credsPath = path.join(sessionPath, 'creds.json');
-      if (!fs.existsSync(credsPath)) continue;
-      if (global.conns.some((conn) => conn.userId === userId)) continue;
-      if (reconnecting.has(userId)) continue;
-      try {
-        reconnecting.add(userId);
-        await starter(null, null, 'Auto reconexión', false, userId, sessionPath);
-      } catch (e) {
-        reconnecting.delete(userId);
-      }
-      await new Promise((res) => setTimeout(res, 2500));
-    }
-  }
-  setTimeout(loadBots, 60 * 1000);
-}
-
-(async () => {
-  await loadBots();
-})();
-
-async function startBot() {
+const startBot = async () => {
   const { state, saveCreds } = await useMultiFileAuthState(global.sessionName);
-  const { version, isLatest } = await fetchLatestBaileysVersion();
+  const { version } = await fetchLatestBaileysVersion();
   const logger = pino({ level: "silent" });
 
-  console.info = () => {}
-  console.debug = () => {}
-  
-  const clientt = makeWASocket({
+  const client = makeWASocket({
     version,
     logger,
-    printQRInTerminal: false,
-    browser: Browsers.macOS('Chrome'),
     auth: {
       creds: state.creds,
-      keys: makeCacheableSignalKeyStore(state.keys, logger),
-    },
-    markOnlineOnConnect: false,
-    generateHighQualityLinkPreview: true,
-    syncFullHistory: false,
-    getMessage: async () => "",
-    keepAliveIntervalMs: 45000,
-    maxIdleTimeMs: 60000,
+      keys: makeCacheableSignalKeyStore(state.keys, logger)
+    }
   });
 
-  global.client = clientt;
-  client.isInit = false;
+  global.client = client;
   client.ev.on("creds.update", saveCreds);
 
   if (!client.authState.creds.registered) {
-    let phoneNumber;
     while (true) {
-      console.log(chalk.bold.redBright(`Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.yellowBright("CONSEJO: Copie el número de WhatsApp y péguelo en la consola.")}\n${chalk.bold.yellowBright("Ejemplo: +57301******")}\n${chalk.bold.magentaBright('---> ')} `));
-      const fixed = await question("");
-      if (isValidPhoneNumber(fixed)) {
-        phoneNumber = normalizePhoneForPairing(fixed);
-        break;
-      } else {
-        log.error("Error: por favor ingrese un número válido, solo se permiten números, espacios, +, -, ()");
+      try {
+        displayLoadingMessage();
+        const phoneInput = await askQuestion("");
+        if (isValidPhoneNumber(phoneInput)) {
+          const phoneNumber = normalizePhoneForPairing(phoneInput);
+          const pairing = await client.requestPairingCode(phoneNumber);
+          console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(pairing)));
+          break;
+        } else {
+          log.error("Error: por favor ingrese un número válido, solo se permiten números, espacios, +, -, ()");
+        }
+      } catch (err) {
+        log.error("Error al solicitar el código de emparejamiento.");
       }
-    }
-
-    try {
-      const pairing = await client.requestPairingCode(phoneNumber);
-      console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(pairing)));
-    } catch (err) {
-      exec("rm -rf ./Sessions/Owner/*");
-      process.exit(1);
     }
   }
 
   client.sendText = (jid, text, quoted = "", options) =>
-    client.sendMessage(jid, { text: text, ...options }, { quoted });
+    client.sendMessage(jid, { text, ...options }, { quoted });
 
   client.ev.on("connection.update", async (update) => {
-    const {
-      qr,
-      connection,
-      lastDisconnect,
-      isNewLogin,
-      receivedPendingNotifications,
-    } = update;
+    const { connection, lastDisconnect } = update;
 
     if (connection === "close") {
       const reason = lastDisconnect?.error?.output?.statusCode || 0;
-      if (reason === DisconnectReason.connectionLost) {
-        log.warning("Se perdió la conexión al servidor, intento reconectarme..");
-        startBot();
-      } else if (reason === DisconnectReason.connectionClosed) {
-        log.warning("Conexión cerrada, intentando reconectarse...");
-        startBot();
-      } else if (reason === DisconnectReason.restartRequired) {
-        log.warning("Es necesario reiniciar..");
-        startBot();
-      } else if (reason === DisconnectReason.timedOut) {
-        log.warning("Tiempo de conexión agotado, intentando reconectarse...");
-        startBot();
-      } else if (reason === DisconnectReason.badSession) {
-        log.warning("Eliminar sesión y escanear nuevamente...");
-        startBot();
-      } else if (reason === DisconnectReason.connectionReplaced) {
-        log.warning("Primero cierre la sesión actual...");
-      } else if (reason === DisconnectReason.loggedOut) {
-        log.warning("Escanee nuevamente y ejecute...");
-        exec("rm -rf ./Sessions/Owner/*");
-        process.exit(1);
-      } else if (reason === DisconnectReason.forbidden) {
-        log.error("Error de conexión, escanee nuevamente y ejecute...");
-        exec("rm -rf ./Sessions/Owner/*");
-        process.exit(1);
-      } else if (reason === DisconnectReason.multideviceMismatch) {
-        log.warning("Inicia nuevamente");
-        exec("rm -rf ./Sessions/Owner/*");
-        process.exit(0);
-      } else {
-        client.end(`Motivo de desconexión desconocido : ${reason}|${connection}`);
+      switch (reason) {
+        case DisconnectReason.connectionLost:
+        case DisconnectReason.connectionClosed:
+          log.warn("Intentando reconectarme...");
+          startBot();
+          break;
+        case DisconnectReason.restartRequired:
+          log.warn("Reinicio necesario, intentando nuevamente...");
+          startBot();
+          break;
+        case DisconnectReason.badSession:
+          log.warn("Eliminar sesión y escanear nuevamente...");
+          startBot();
+          break;
+        case DisconnectReason.loggedOut:
+          log.warn("Escanee nuevamente y ejecute...");
+          exec("rm -rf ./Sessions/Owner/*");
+          process.exit(1);
+        default:
+          log.error("Desconexión inesperada, razón: " + reason);
+          client.end(`Motivo de desconexión desconocido: ${reason}`);
       }
     }
 
-    if (connection == "open") {
-      console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { 
-        borderStyle: 'round', 
-        borderColor: 'green', 
-        title: chalk.green.bold('● CONEXIÓN ●'), 
-        titleAlignment: 'center', 
-        float: 'center' 
+    if (connection === "open") {
+      console.log(boxen(chalk.bold('¡CONECTADO CON WHATSAPP!'), {
+        borderStyle: 'round',
+        borderColor: 'green',
+        title: chalk.green.bold('● CONEXIÓN ●'),
+        titleAlignment: 'center',
+        float: 'center'
       }));
     }
-
-    if (isNewLogin) {
-      log.info("Nuevo dispositivo detectado");
-    }
-
-    if (receivedPendingNotifications == "true") {
-      log.warn("Por favor espere aproximadamente 1 minuto...");
-      client.ev.flush();
-    }
   });
 
-  let m;
   client.ev.on("messages.upsert", async ({ messages }) => {
-    try {
-      m = messages[0];
-      if (!m.message) return;
-      m.message =
-        Object.keys(m.message)[0] === "ephemeralMessage"
-          ? m.message.ephemeralMessage.message
-          : m.message;
-      if (m.key && m.key.remoteJid === "status@broadcast") return;
-      if (!client.public && !m.key.fromMe && messages.type === "notify") return;
-      if (m.key.id.startsWith("BAE5") && m.key.id.length === 16) return;
-      m = await smsg(client, m);
-      handler(client, m, messages);
-    } catch (err) {
-      console.log(err);
-    }
+    const m = messages[0];
+    if (!m.message || (m.key && m.key.remoteJid === "status@broadcast") || (m.key.id.startsWith("BAE5") && m.key.id.length === 16)) return;
+    const msg = await smsg(client, m);
+    handler(client, msg, messages);
   });
-
-  try {
-    await events(client, m);
-  } catch (err) {
-    console.log(chalk.gray(`[ BOT  ]  → ${err}`));
-  }
 
   client.decodeJid = (jid) => {
     if (!jid) return jid;
     if (/:\d+@/gi.test(jid)) {
-      let decode = jidDecode(jid) || {};
-      return (
-        (decode.user && decode.server && decode.user + "@" + decode.server) ||
-        jid
-      );
-    } else return jid;
-  }
-}
+      const { user, server } = jidDecode(jid) || {};
+      return user && server ? `${user}@${server}` : jid;
+    }
+    return jid;
+  };
+};
 
 (async () => {
-    global.loadDatabase();
-    console.log(chalk.gray('[ ✿  ]  Base de datos cargada correctamente.'));
-    await startBot();
+  await startBot();
+  console.log(chalk.gray('[ ✿  ]  Base de datos cargada correctamente.'));
 })();
