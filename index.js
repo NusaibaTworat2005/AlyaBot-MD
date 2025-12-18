@@ -185,6 +185,8 @@ console.log(chalk.bold.redBright(`Por favor, Ingrese el número de WhatsApp.\n${
     } catch (err) {
         const fixed = await question("")
         const phoneNumber = normalizePhoneForPairing(fixed);
+      const pairing = await client.requestPairingCode(phoneNumber)
+      console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(pairing)))
     }
   }
 
