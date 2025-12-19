@@ -51,6 +51,8 @@ const log = {
 
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const askQuestion = (texto) => new Promise((resolver) => rl.question(texto, resolver))
+let usarCodigo = false;
+let numero = "";
 
   const DIGITS = (s = "") => String(s).replace(/\D/g, "");
 
@@ -124,7 +126,7 @@ const displayLoadingMessage = () => {
 
 if (!fs.existsSync(`./Sessions/Owner/creds.json`)) {
 let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
-const opcion = readlineSync.question(`╭${lineM}  
+const opcion = askQuestion.question(`╭${lineM}  
 ┊ ${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
 ┊ ${chalk.blueBright('┊')} ${chalk.blue.bgBlue.bold.cyan('MÉTODO DE VINCULACIÓN')}
 ┊ ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}   
@@ -142,7 +144,7 @@ const opcion = readlineSync.question(`╭${lineM}
 usarCodigo = opcion === "2";
 if (usarCodigo) {
 displayLoadingMessage()
-numero = readlineSync.question("").replace(/[^0-9]/g, '');
+numero = askQuestion.question("").replace(/[^0-9]/g, '');
 if (numero.startsWith('52') && !numero.startsWith('521')) {
 numero = '521' + numero.slice(2);
 }}
