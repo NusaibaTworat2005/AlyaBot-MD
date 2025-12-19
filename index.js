@@ -239,13 +239,13 @@ async function startBot() {
     }
 
 if (usarCodigo && !state.creds.registered) {
-// setTimeout(async () => {
+setTimeout(async () => {
 try {
 const pairing = await client.requestPairingCode(numero);
 const codeBot = pairing?.match(/.{1,4}/g)?.join("-") || pairing
 console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(codeBot)));
+}, 3000);
 } catch {}
-// }, 2000);
 }
 })
 
