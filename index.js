@@ -119,7 +119,7 @@ async function loadBots() {
 })()
 
 const displayLoadingMessage = () => {
-  console.log(chalk.bold.redBright(`Por favor, Ingrese el número de WhatsApp.\n` +
+  console.log(chalk.bold.redBright(`\n\nPor favor, Ingrese el número de WhatsApp.\n` +
       `${chalk.bold.yellowBright("Ejemplo: +57301******")}\n` +
       `${chalk.bold.magentaBright('---> ')} `));
 };
