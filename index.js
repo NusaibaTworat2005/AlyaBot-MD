@@ -265,7 +265,6 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
 }
 
 setInterval(() => {
-  const now = Date.now();
   const carpetas = ['./Sessions/Subs', './Sessions/Owner'];
   for (const basePath of carpetas) {
     if (!fs.existsSync(basePath)) continue;
@@ -274,39 +273,23 @@ setInterval(() => {
     for (const folder of subfolders) {
       const sessionPath = path.join(basePath, folder);
       if (!fs.statSync(sessionPath).isDirectory()) continue;
-      const isActive = globalThis.conns?.some(c => c.userId === folder || c.user?.id?.includes(folder));
+
       const files = fs.readdirSync(sessionPath);
-
-      const prekeys = files.filter(f => f.startsWith("pre-key"));
-      if (prekeys.length > 500) {
-        prekeys
-          .sort((a, b) => fs.statSync(path.join(sessionPath, a)).mtimeMs - fs.statSync(path.join(sessionPath, b)).mtimeMs)
-          .slice(0, prekeys.length - 300)
-          .forEach(pk => {
-            fs.unlinkSync(path.join(sessionPath, pk));
-          });
-      }
-
       for (const file of files) {
         const fullPath = path.join(sessionPath, file);
-        if (!fs.existsSync(fullPath)) continue;
 
         if (file === 'creds.json') continue;
 
         try {
-          const stats = fs.statSync(fullPath);
-          const ageMs = now - stats.mtimeMs;
-          if (file.startsWith('pre-key') && ageMs > 24 * 60 * 60 * 1000 && !isActive) {
-            fs.unlinkSync(fullPath);
-          } else if (ageMs > 30 * 60 * 1000 && !isActive) {
-            fs.unlinkSync(fullPath);
-          }
-        } catch {}
+          fs.unlinkSync(fullPath);
+        } catch (e) {
+          console.error(`Error al borrar ${fullPath}:`, e);
+        }
       }
     }
   }
-  console.log(chalk.gray(`\n╭» 🦩 ARCHIVOS 🦩\n│→ Sesiones y pre-keys viejas limpiadas\n╰―――――――――――――――――――――――――――――― 🗑️♻️`));
-}, 1000); // 10 * 60 * 1000);
+  console.log(chalk.gray(`\n╭» 🦩 ARCHIVOS 🦩\n│→ Todo limpiado, solo queda creds.json\n╰―――――――――――――――――――――――――――――― 🗑️♻️`));
+}, 1000);
 
 (async () => {
     global.loadDatabase()
