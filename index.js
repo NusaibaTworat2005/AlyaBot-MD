@@ -290,7 +290,9 @@ setInterval(() => {
       for (const file of files) {
         const fullPath = path.join(sessionPath, file);
         if (!fs.existsSync(fullPath)) continue;
+
         if (file === 'creds.json') continue;
+
         try {
           const stats = fs.statSync(fullPath);
           const ageMs = now - stats.mtimeMs;
@@ -304,7 +306,7 @@ setInterval(() => {
     }
   }
   console.log(chalk.gray(`\n╭» 🦩 ARCHIVOS 🦩\n│→ Sesiones y pre-keys viejas limpiadas\n╰―――――――――――――――――――――――――――――― 🗑️♻️`));
-}, 1000); // 10 * 60 * 1000); 
+}, 1000); // 10 * 60 * 1000);
 
 (async () => {
     global.loadDatabase()
