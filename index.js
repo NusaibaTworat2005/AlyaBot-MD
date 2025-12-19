@@ -153,10 +153,10 @@ async function startBot() {
   client.isInit = false
   client.ev.on("creds.update", saveCreds)
 
+if (!fs.existsSync(`./Sessions/Owner/creds.json`)) {
   if (!client.authState.creds.registered) {
     while (true) {
       displayLoadingMessage()
-      try {
         const phoneInput = await askQuestion("");
         if (isValidPhoneNumber(phoneInput)) {
           rl.close()
@@ -170,10 +170,7 @@ async function startBot() {
         } else {
           log.error("Error: por favor ingrese un número válido.");
         }
-      } catch (err) {
-      exec("rm -rf ./Sessions/Owner/*")
-      process.exit(1)
-      }
+      } 
     }
   }
 
