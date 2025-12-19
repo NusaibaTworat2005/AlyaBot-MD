@@ -51,7 +51,6 @@ const log = {
 };
 
 const askQuestion = readlineSync
-let usarCodigo = false;
 let numero = "";
 let phoneInput = "";
 
@@ -119,9 +118,6 @@ async function loadBots() {
   await loadBots()
 })()
 
-const BOT_SESSION_FOLDER = "./Sessions/Owner";
-const BOT_CREDS_PATH = path.join(BOT_SESSION_FOLDER, "creds.json");
-
 const displayLoadingMessage = () => {
   console.log(chalk.bold.redBright(`Por favor, Ingrese el número de WhatsApp.\n` +
       `${chalk.bold.yellowBright("Ejemplo: +57301******")}\n` +
@@ -129,27 +125,9 @@ const displayLoadingMessage = () => {
 };
 
 if (!fs.existsSync(`./Sessions/Owner/creds.json`)) {
-let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》'
-const opcion = askQuestion.question(`╭${lineM}  
-┊ ${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
-┊ ${chalk.blueBright('┊')} ${chalk.blue.bgBlue.bold.cyan('MÉTODO DE VINCULACIÓN')}
-┊ ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}   
-┊ ${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}     
-┊ ${chalk.blueBright('┊')} ${chalk.green.bgMagenta.bold.yellow('¿CÓMO DESEA CONECTARSE?')}
-┊ ${chalk.blueBright('┊')} ${chalk.bold.redBright('⇢  Opción 1:')} ${chalk.greenBright('Código QR.')}
-┊ ${chalk.blueBright('┊')} ${chalk.bold.redBright('⇢  Opción 2:')} ${chalk.greenBright('Código de 8 digitos.')}
-┊ ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
-┊ ${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}     
-┊ ${chalk.blueBright('┊')} ${chalk.italic.magenta('Escriba sólo el número de')}
-┊ ${chalk.blueBright('┊')} ${chalk.italic.magenta('la opción para conectarse.')}
-┊ ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
-╰${lineM}\n${chalk.bold.magentaBright('---> ')}`)
-usarCodigo = opcion === "2";
-if (usarCodigo) {
 displayLoadingMessage()
 phoneInput = askQuestion.question("")
 numero = normalizePhoneForPairing(phoneInput)
-}
 }
 
 async function startBot() {
@@ -238,7 +216,7 @@ async function startBot() {
  console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))
     }
 
-if (usarCodigo && !state.creds.registered) {
+if (!state.creds.registered) {
 setTimeout(async () => {
 try {
 const pairing = await client.requestPairingCode(numero);
