@@ -118,6 +118,9 @@ async function loadBots() {
   await loadBots()
 })()
 
+const BOT_SESSION_FOLDER = "./Sessions/Owner";
+const BOT_CREDS_PATH = path.join(BOT_SESSION_FOLDER, "creds.json");
+
 const displayLoadingMessage = () => {
   console.log(chalk.bold.redBright(`Por favor, Ingrese el número de WhatsApp.\n` +
       `${chalk.bold.yellowBright("Ejemplo: +57301******")}\n` +
