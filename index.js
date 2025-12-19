@@ -80,6 +80,7 @@ say('WhatsApp Bot', {
 let phoneNumber = globalThis.botNumber;
 const methodCodeQR = process.argv.includes("qr");
 const methodCode = !!phoneNumber || process.argv.includes("code");
+const MethodMobile = process.argv.includes("mobile");
 
 const isValidPhoneNumber = (input) => /^[0-9\s\+\-\(\)]+$/.test(input);
 
@@ -108,7 +109,8 @@ async function startBot() {
   const clientt = makeWASocket({
     version,
     logger,
-    printQRInTerminal: opcion === '1' || methodCodeQR,
+    printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
+    mobile: MethodMobile, 
     browser: Browsers.macOS('Chrome'),
     auth: {
       creds: state.creds,
