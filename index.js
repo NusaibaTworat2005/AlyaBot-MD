@@ -27,13 +27,7 @@ import cfonts from 'cfonts';
 import pino from "pino";
 import chalk from "chalk";
 import fs from "fs";
-import path from "path";
-import boxen from 'boxen';
 import readline from "readline";
-import { smsg } from "./lib/message.js";
-import db from "./lib/system/database.js";
-import { startSubBot } from './lib/subs.js';
-import { exec } from "child_process";
 
 const log = {
   info: (msg) => console.log(chalk.bgBlue.white.bold(`INFO`), chalk.white(msg)),
@@ -70,7 +64,6 @@ async function startBot() {
   const clientt = makeWASocket({
     version,
     logger,
-    printQRInTerminal: opcion === '1',
     browser: Browsers.macOS('Chrome'),
     auth: {
       creds: state.creds,
@@ -87,6 +80,61 @@ async function startBot() {
   global.client = clientt;
   client.isInit = false;
   client.ev.on("creds.update", saveCreds);
+
+  client.ev.on("connection.update", async (update) => {
+    const { qr, connection, lastDisconnect, isNewLogin, receivedPendingNotifications } = update;
+
+    if (connection === "close") {
+      const reason = lastDisconnect?.error?.output?.statusCode || 0;
+      if (reason === DisconnectReason.connectionLost) {
+        log.warning("Se perdió la conexión al servidor, intentando reconectar...");
+        startBot();
+      } else if (reason === DisconnectReason.connectionClosed) {
+        log.warning("Conexión cerrada, intentando reconectar...");
+        startBot();
+      } else if (reason === DisconnectReason.restartRequired) {
+        log.warning("Es necesario reiniciar...");
+        startBot();
+      } else if (reason === DisconnectReason.timedOut) {
+        log.warning("Tiempo de conexión agotado, intentando reconectar...");
+        startBot();
+      } else if (reason === DisconnectReason.badSession) {
+        log.warning("Eliminar sesión y escanear nuevamente...");
+        startBot();
+      } else if (reason === DisconnectReason.connectionReplaced) {
+        log.warning("Primero cierre la sesión actual...");
+      } else if (reason === DisconnectReason.loggedOut) {
+        log.warning("Escanee nuevamente y ejecute...");
+        exec("rm -rf ./Sessions/Owner/*");
+        process.exit(1);
+      } else if (reason === DisconnectReason.forbidden) {
+        log.error("Error de conexión, escanee nuevamente y ejecute...");
+        exec("rm -rf ./Sessions/Owner/*");
+        process.exit(1);
+      } else if (reason === DisconnectReason.multideviceMismatch) {
+        log.warning("Inicia nuevamente");
+        exec("rm -rf ./Sessions/Owner/*");
+        process.exit(0);
+      } else {
+        client.end(`Motivo de desconexión desconocido: ${reason}|${connection}`);
+      }
+    }
+
+    if (connection === "open") {
+      console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }));
+    }
+
+    if (isNewLogin) {
+      log.info("Nuevo dispositivo detectado");
+    }
+
+    if ((update.qr && update.qr !== 0) || opcion === '1') {
+      console.log(chalk.green.bold(`
+╭───────────────────╼
+│ ${chalk.cyan("Escanea este código QR para conectarte.")}
+╰───────────────────╼`));
+    }
+  });
 
   if (!fs.existsSync(`./Sessions/Owner/creds.json`)) {
     if (opcion === '2' || !client.authState.creds.registered) {
@@ -111,68 +159,6 @@ async function startBot() {
 
   client.sendText = (jid, text, quoted = "", options) =>
     client.sendMessage(jid, { text: text, ...options }, { quoted });
-
-  client.ev.on("connection.update", async (update) => {
-    const { qr, connection, lastDisconnect, isNewLogin, receivedPendingNotifications } = update;
-
-    if (connection === "close") {
-      const reason = lastDisconnect?.error?.output?.statusCode || 0;
-      if (reason === DisconnectReason.connectionLost) {
-        log.warning("Se perdió la conexión al servidor, intento reconectarme..");
-        startBot();
-      } else if (reason === DisconnectReason.connectionClosed) {
-        log.warning("Conexión cerrada, intentando reconectarse...");
-        startBot();
-      } else if (reason === DisconnectReason.restartRequired) {
-        log.warning("Es necesario reiniciar..");
-        startBot();
-      } else if (reason === DisconnectReason.timedOut) {
-        log.warning("Tiempo de conexión agotado, intentando reconectarse...");
-        startBot();
-      } else if (reason === DisconnectReason.badSession) {
-        log.warning("Eliminar sesión y escanear nuevamente...");
-        startBot();
-      } else if (reason === DisconnectReason.connectionReplaced) {
-        log.warning("Primero cierre la sesión actual...");
-      } else if (reason === DisconnectReason.loggedOut) {
-        log.warning("Escanee nuevamente y ejecute...");
-        exec("rm -rf ./Sessions/Owner/*");
-        process.exit(1);
-      } else if (reason === DisconnectReason.forbidden) {
-        log.error("Error de conexión, escanee nuevamente y ejecute...");
-        exec("rm -rf ./Sessions/Owner/*");
-        process.exit(1);
-      } else if (reason === DisconnectReason.multideviceMismatch) {
-        log.warning("Inicia nuevamente");
-        exec("rm -rf ./Sessions/Owner/*");
-        process.exit(0);
-      } else {
-        client.end(`Motivo de desconexión desconocido : ${reason}|${connection}`);
-      }
-    }
-
-    if (connection === "open") {
-      console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }));
-    }
-
-    if (isNewLogin) {
-      log.info("Nuevo dispositivo detectado");
-    }
-
-    if (receivedPendingNotifications === "true") {
-      log.warn("Por favor espere aproximadamente 1 minuto...");
-      client.ev.flush();
-    }
-
-    if ((update.qr && update.qr !== 0) || methodCodeQR) {
-      if (opcion === '1' || methodCodeQR) {
-        console.log(chalk.green.bold(`
-╭───────────────────╼
-│ ${chalk.cyan("Escanea este código QR para conectarte.")}
-╰───────────────────╼`));
-      }
-    }
-  });
 
   let m;
   client.ev.on("messages.upsert", async ({ messages }) => {
