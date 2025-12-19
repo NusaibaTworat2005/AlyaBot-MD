@@ -222,17 +222,8 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
     }
 
     if (connection == "open") {
-      client.uptime = Date.now();
+     // client.uptime = Date.now();
  console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))
-    }
-
-    if (isNewLogin) {
-      log.info("Nuevo dispositivo detectado")
-    }
-
-    if (receivedPendingNotifications == "true") {
-      log.warn("Por favor espere aproximadamente 1 minuto...")
-      client.ev.flush()
     }
 })
 
