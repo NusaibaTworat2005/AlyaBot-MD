@@ -249,6 +249,7 @@ console.log(chalk.yellow('Código de emparejamiento:'), chalk.greenBright(code))
 } catch {}
 }, 2000);
 }
+})
 
   let m
   client.ev.on("messages.upsert", async ({ messages }) => {
