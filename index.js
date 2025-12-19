@@ -234,21 +234,18 @@ async function startBot() {
     }
 
     if (connection == "open") {
-      // client.uptime = Date.now();
+      client.uptime = Date.now();
  console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))
     }
 
-process.on('uncaughtException', console.error);
-process.on('unhandledRejection', console.error);
-
 if (usarCodigo && !state.creds.registered) {
-setTimeout(async () => {
+// setTimeout(async () => {
 try {
 const pairing = await client.requestPairingCode(numero);
 const codeBot = pairing?.match(/.{1,4}/g)?.join("-") || pairing
 console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(codeBot)));
 } catch {}
-}, 2000);
+// }, 2000);
 }
 })
 
