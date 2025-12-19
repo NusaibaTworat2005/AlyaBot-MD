@@ -10,6 +10,7 @@
  # ------------- √ × -------------
 */
 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1'
 import "./settings.js"
 import handler from './handler.js'
 import events from './commands/events.js'
