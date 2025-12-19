@@ -45,39 +45,6 @@ const log = {
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 const askQuestion = (texto) => new Promise((resolver) => rl.question(texto, resolver));
 
-const DIGITS = (s = "") => String(s).replace(/\D/g, "");
-
-function normalizePhoneForPairing(input) {
-  let s = DIGITS(input);
-  if (!s) return "";
-  if (s.startsWith("0")) s = s.replace(/^0+/, "");
-  if (s.length === 10 && s.startsWith("3")) {
-    s = "57" + s;
-  }
-  if (s.startsWith("52") && !s.startsWith("521") && s.length >= 12) {
-    s = "521" + s.slice(2);
-  }
-  if (s.startsWith("54") && !s.startsWith("549") && s.length >= 11) {
-    s = "549" + s.slice(2);
-  }
-  return s;
-}
-
-const { say } = cfonts;
-say('alya san', {
-  align: 'center',
-  gradient: ['red', 'blue']
-});
-say('WhatsApp Bot', {
-  font: 'console',
-  align: 'center',
-  gradient: ['blue', 'magenta']
-});
-
-let phoneNumber = globalThis.botNumber;
-const methodCodeQR = process.argv.includes("qr");
-const methodCode = !!phoneNumber || process.argv.includes("code");
-
 const isValidPhoneNumber = (input) => /^[0-9\s\+\-\(\)]+$/.test(input);
 
 const displayLoadingMessage = () => {
@@ -97,12 +64,13 @@ do {
 
 async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState(global.sessionName);
-  const { version, isLatest } = await fetchLatestBaileysVersion();
+  const { version } = await fetchLatestBaileysVersion();
   const logger = pino({ level: "silent" });
 
   const clientt = makeWASocket({
     version,
     logger,
+    printQRInTerminal: opcion === '1',
     browser: Browsers.macOS('Chrome'),
     auth: {
       creds: state.creds,
@@ -145,13 +113,7 @@ async function startBot() {
     client.sendMessage(jid, { text: text, ...options }, { quoted });
 
   client.ev.on("connection.update", async (update) => {
-    const {
-      qr,
-      connection,
-      lastDisconnect,
-      isNewLogin,
-      receivedPendingNotifications,
-    } = update;
+    const { qr, connection, lastDisconnect, isNewLogin, receivedPendingNotifications } = update;
 
     if (connection === "close") {
       const reason = lastDisconnect?.error?.output?.statusCode || 0;
@@ -217,10 +179,7 @@ async function startBot() {
     try {
       m = messages[0];
       if (!m.message) return;
-      m.message =
-        Object.keys(m.message)[0] === "ephemeralMessage"
-          ? m.message.ephemeralMessage.message
-          : m.message;
+      m.message = Object.keys(m.message)[0] === "ephemeralMessage" ? m.message.ephemeralMessage.message : m.message;
       if (m.key && m.key.remoteJid === "status@broadcast") return;
       if (!client.public && !m.key.fromMe && messages.type === "notify") return;
       if (m.key.id.startsWith("BAE5") && m.key.id.length === 16) return;
@@ -239,18 +198,11 @@ async function startBot() {
 
   client.decodeJid = (jid) => {
     if (!jid) return jid;
-    if (/:\d+@/gi.test(jid)) {
-      let decode = jidDecode(jid) || {};
-      return (
-        (decode.user && decode.server && decode.user + "@" + decode.server) ||
-        jid
-      );
-    } else return jid;
+    return jidDecode(jid) || jid;
   };
 }
 
 (async () => {
-  global.loadDatabase();
   console.log(chalk.gray('[ ✿  ]  Base de datos cargada correctamente.'));
   await startBot();
 })();
