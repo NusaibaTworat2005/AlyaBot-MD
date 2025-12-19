@@ -24,20 +24,15 @@ import {
 } from "@whiskeysockets/baileys";
 import cfonts from 'cfonts';
 import pino from "pino";
-import crypto from 'crypto';
 import chalk from "chalk";
 import fs from "fs";
 import path from "path";
 import boxen from 'boxen';
 import readline from "readline";
-import os from "os";
-import qrcode from "qrcode-terminal";
-import parsePhoneNumber from "awesome-phonenumber";
 import { smsg } from "./lib/message.js";
 import db from "./lib/system/database.js";
 import { startSubBot } from './lib/subs.js';
 import { exec, execSync } from "child_process";
-import moment from 'moment-timezone';
 
 const log = {
   info: (msg) => console.log(chalk.bgBlue.white.bold(`INFO`), chalk.white(msg)),
@@ -61,16 +56,6 @@ const rl = readline.createInterface({
 
 const askQuestion = async (text) => {
   return new Promise(resolve => rl.question(text, answer => resolve(answer.trim())));
-};
-
-const usePairingCode = true;
-
-const userInfoSyt = () => {
-  try {
-    return os.userInfo().username;
-  } catch (e) {
-    return process.env.USER || process.env.USERNAME || "desconocido";
-  }
 };
 
   const DIGITS = (s = "") => String(s).replace(/\D/g, "");
