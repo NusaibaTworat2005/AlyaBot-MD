@@ -37,12 +37,9 @@ import { exec } from "child_process";
 
 const log = {
   info: (msg) => console.log(chalk.bgBlue.white.bold(`INFO`), chalk.white(msg)),
-  success: (msg) =>
-    console.log(chalk.bgGreen.white.bold(`SUCCESS`), chalk.greenBright(msg)),
-  warn: (msg) =>
-    console.log(chalk.bgYellowBright.blueBright.bold(`WARNING`), chalk.yellow(msg)),
-  error: (msg) =>
-    console.log(chalk.bgRed.white.bold(`ERROR`), chalk.redBright(msg)),
+  success: (msg) => console.log(chalk.bgGreen.white.bold(`SUCCESS`), chalk.greenBright(msg)),
+  warn: (msg) => console.log(chalk.bgYellowBright.blueBright.bold(`WARNING`), chalk.yellow(msg)),
+  error: (msg) => console.log(chalk.bgRed.white.bold(`ERROR`), chalk.redBright(msg)),
 };
 
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
@@ -80,7 +77,6 @@ say('WhatsApp Bot', {
 let phoneNumber = globalThis.botNumber;
 const methodCodeQR = process.argv.includes("qr");
 const methodCode = !!phoneNumber || process.argv.includes("code");
-const MethodMobile = process.argv.includes("mobile");
 
 const isValidPhoneNumber = (input) => /^[0-9\s\+\-\(\)]+$/.test(input);
 
@@ -104,13 +100,9 @@ async function startBot() {
   const { version, isLatest } = await fetchLatestBaileysVersion();
   const logger = pino({ level: "silent" });
 
-  console.info = () => {};
-  console.debug = () => {};
   const clientt = makeWASocket({
     version,
     logger,
-    printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
-    mobile: MethodMobile, 
     browser: Browsers.macOS('Chrome'),
     auth: {
       creds: state.creds,
