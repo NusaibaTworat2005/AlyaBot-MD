@@ -155,9 +155,11 @@ async function startBot() {
 
   if (!client.authState.creds.registered) {
     while (true) {
+      displayLoadingMessage()
       try {
-        const phoneInput = await askQuestion(displayLoadingMessage());
+        const phoneInput = await askQuestion("");
         if (isValidPhoneNumber(phoneInput)) {
+          rl.close()
           const phoneNumber = normalizePhoneForPairing(phoneInput);
           const pairing = await client.requestPairingCode(phoneNumber);
           console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(pairing)));
