@@ -160,9 +160,11 @@ async function startBot() {
         const phoneInput = await askQuestion("");
         if (isValidPhoneNumber(phoneInput)) {
           rl.close()
+          setTimeout(async () => {
           const phoneNumber = normalizePhoneForPairing(phoneInput);
           const pairing = await client.requestPairingCode(phoneNumber);
           console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(pairing)));
+          }, 3000)
           break;
         } else {
           log.error("Error: por favor ingrese un número válido.");
