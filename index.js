@@ -159,6 +159,17 @@ async function startBot() {
   client.isInit = false
   client.ev.on("creds.update", saveCreds)
 
+if (!fs.existsSync(`./Sessions/Owner/creds.json`)) {
+if (!state.creds.registered) {
+setTimeout(async () => {
+try {
+const pairing = await client.requestPairingCode(numero);
+const codeBot = pairing?.match(/.{1,4}/g)?.join("-") || pairing
+return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(codeBot)));
+} catch {}
+}, 3000);
+}}
+
   client.sendText = (jid, text, quoted = "", options) =>
     client.sendMessage(jid, { text: text, ...options }, { quoted })
 
@@ -170,16 +181,6 @@ async function startBot() {
       isNewLogin,
       receivedPendingNotifications,
     } = update
-
-if (!state.creds.registered) {
-setTimeout(async () => {
-try {
-const pairing = await client.requestPairingCode(numero);
-const codeBot = pairing?.match(/.{1,4}/g)?.join("-") || pairing
-return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACIÓN:`)), chalk.bold.white(chalk.white(codeBot)));
-} catch {}
-}, 3000);
-}
 
     if (connection === "close") {
       const reason = lastDisconnect?.error?.output?.statusCode || 0;
