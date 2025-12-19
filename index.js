@@ -264,33 +264,6 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
   }
 }
 
-setInterval(() => {
-  const carpetas = ['./Sessions/Subs', './Sessions/Owner'];
-  for (const basePath of carpetas) {
-    if (!fs.existsSync(basePath)) continue;
-
-    const subfolders = fs.readdirSync(basePath);
-    for (const folder of subfolders) {
-      const sessionPath = path.join(basePath, folder);
-      if (!fs.statSync(sessionPath).isDirectory()) continue;
-
-      const files = fs.readdirSync(sessionPath);
-      for (const file of files) {
-        const fullPath = path.join(sessionPath, file);
-
-        if (file === 'creds.json') continue;
-
-        try {
-          fs.unlinkSync(fullPath);
-        } catch (e) {
-          console.error(`Error al borrar ${fullPath}:`, e);
-        }
-      }
-    }
-  }
-  console.log(chalk.gray(`\n╭» 🦩 ARCHIVOS 🦩\n│→ Todo limpiado, solo queda creds.json\n╰―――――――――――――――――――――――――――――― 🗑️♻️`));
-}, 1000);
-
 (async () => {
     global.loadDatabase()
     console.log(chalk.gray('[ ✿  ]  Base de datos cargada correctamente.'))
