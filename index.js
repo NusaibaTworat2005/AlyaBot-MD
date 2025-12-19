@@ -149,7 +149,7 @@ if (usarCodigo) {
 displayLoadingMessage()
 phoneInput = askQuestion.question("")
 numero = normalizePhoneForPairing(phoneInput)
-}}
+}
 }
 
 async function startBot() {
