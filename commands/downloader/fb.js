@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export default {
   command: ['fb', 'facebook'],
   category: 'downloader',
@@ -14,8 +12,11 @@ export default {
     }
 
     try {
-      const keys = api.key
-      const videoUrl = `${api.url}/dl/facebookv2?url=${args[0]}&key=${keys}`
+      const videoUrl = `${api.url}/dl/facebookv2?url=${args[0]}&key=${api.key}`
+
+      const response = await fetch(videoUrl)
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      const buffer = Buffer.from(await response.arrayBuffer())
 
       const caption = `🅕𝖡 🅓ownload
 
@@ -23,11 +24,11 @@ export default {
 
       await client.sendMessage(
         m.chat,
-        { video: { url: videoUrl }, caption, mimetype: 'video/mp4', fileName: 'fb.mp4' },
+        { video: buffer, caption, mimetype: 'video/mp4', fileName: 'fb.mp4' },
         { quoted: m }
       )
     } catch (e) {
-      await m.reply('ꕥ Error: ' + e)
+      await m.reply('ꕥ Error: ' + e.message)
     }
   }
 }
