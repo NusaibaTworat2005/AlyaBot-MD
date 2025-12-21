@@ -15,12 +15,7 @@ export default {
 
     try {
       const keys = api.key
-      const res = await axios.get(`${api.url}/dl/facebookv2`, {
-        params: { url: args[0], key: keys },
-        responseType: 'arraybuffer' 
-      })
-
-      const buffer = Buffer.from(res.data)
+      const videoUrl = `${api.url}/dl/facebookv2?url=${args[0]}&key=${keys}`
 
       const caption = `🅕𝖡 🅓ownload
 
@@ -28,11 +23,11 @@ export default {
 
       await client.sendMessage(
         m.chat,
-        { video: buffer, caption, mimetype: 'video/mp4', fileName: 'fb.mp4' },
+        { video: { url: videoUrl }, caption, mimetype: 'video/mp4', fileName: 'fb.mp4' },
         { quoted: m }
       )
     } catch (e) {
-      await m.reply(msgglobal + e)
+      await m.reply('ꕥ Error: ' + e)
     }
   }
 }
