@@ -15,7 +15,7 @@ export default {
 
     try {
       let keys = api.key
-      const res = await axios.get(api.url + '/dl/facebookv2', {
+      const res = await axios.get(`${api.url}/dl/facebookv2`, {
         params: {
           url: args[0],
           key: keys
