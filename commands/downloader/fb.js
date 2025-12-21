@@ -14,31 +14,28 @@ export default {
     }
 
     try {
-      let keys = api.key
       const res = await axios.get(`${api.url}/dl/facebookv2`, {
         params: {
-          url: args[0],
-          key: keys
+          url: encodeURIComponent(args[0]),
+          key: 'ZyxlJs'
         }
       })
 
       const json = res.data
-      const results = json?.data?.results?.filter(v =>
-        v.url && v.url !== '/' && v.quality
-      )
+      const results = json?.data?.results?.filter(v => v.url && v.quality)
 
       if (!json.status || !results || results.length === 0) {
         return m.reply('ꕥ No se pudo obtener el *video*')
       }
 
-      const random = results[Math.floor(Math.random() * results.length)]
-      const videoUrl = random.url
-      const quality = random.quality
+      const best = results.find(v => v.quality.includes('1080')) || results[0]
+      const videoUrl = best.url
+      const quality = best.quality
 
-      const caption = `ㅤ۟∩　ׅ　★　ׅ　🅕𝖡 🅓ownload　ׄᰙ　
+      const caption = `🅕𝖡 🅓ownload
 
-𖣣ֶㅤ֯⌗ ☆  ׄ ⬭ *Enlace* › ${args[0]}
-𖣣ֶㅤ֯⌗ ☆  ׄ ⬭ *Calidad* › ${quality}`.trim()
+*Enlace* › ${args[0]}
+*Calidad* › ${quality}`
 
       await client.sendMessage(
         m.chat,
@@ -46,7 +43,7 @@ export default {
         { quoted: m }
       )
     } catch (e) {
-      await m.reply(msgglobal + e)
+      await m.reply('ꕥ Error: ' + e.message)
     }
   }
 }
