@@ -3,7 +3,7 @@ import axios from 'axios'
 export default {
   command: ['fb', 'facebook'],
   category: 'downloader',
-  run: async (client, m, args, command) => {
+  run: async (client, m, args) => {
 
     if (!args[0]) {
       return m.reply('ꕥ Ingrese un enlace de *Facebook*')
@@ -14,23 +14,24 @@ export default {
     }
 
     try {
-      const res = await axios.get(`${api.url}/dl/facebook`, {
+      let keys = api.key
+      const res = await axios.get(api.url + '/dl/facebookv2', {
         params: {
           url: args[0],
-          key: api.key
+          key: keys
         }
       })
 
       const json = res.data
-      const downloads = json?.resultados?.filter(v =>
-        v.url && v.url !== '/' && !v.quality.toLowerCase().includes('kbps')
+      const results = json?.data?.results?.filter(v =>
+        v.url && v.url !== '/' && v.quality
       )
 
-      if (!json.status || !downloads || downloads.length === 0) {
+      if (!json.status || !results || results.length === 0) {
         return m.reply('ꕥ No se pudo obtener el *video*')
       }
 
-      const random = downloads[Math.floor(Math.random() * downloads.length)]
+      const random = results[Math.floor(Math.random() * results.length)]
       const videoUrl = random.url
       const quality = random.quality
 
@@ -45,7 +46,7 @@ export default {
         { quoted: m }
       )
     } catch (e) {
-      await m.reply(msgglobal + e)
+      await m.reply(msgglobal)
     }
   }
 }
