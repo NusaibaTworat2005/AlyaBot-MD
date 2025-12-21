@@ -1,9 +1,9 @@
-import fetch from 'node-fetch';
+import fetch from 'node-fetch'
 
 export default {
   command: ['instagram', 'ig'],
   category: 'downloader',
-  run: async (client, m, args, command) => {
+  run: async (client, m, args) => {
 
     const url = args[0]
 
@@ -16,35 +16,38 @@ export default {
     }
 
     try {
-      const res = await fetch(`${api.url}/dl/instagram?url=${encodeURIComponent(url)}&key=${api.key}`)
+      const res = await fetch(`${api.url}/dl/instagramv2?url=${encodeURIComponent(url)}&key=${api.key}`)
       const json = await res.json()
 
-      if (!json.status || !json.data || !json.data.dl) {
+      if (!json.status || !json.data || !json.data.mediaUrls || json.data.mediaUrls.length === 0) {
         return client.reply(m.chat, '《✧》 No se pudo *obtener* el contenido', m)
       }
 
-      const { title, like, comment, type, dl } = json.data
-      const caption = `ㅤ۟∩　ׅ　★ ໌　ׅ　🅘𝖦 🅓ownload　ׄᰙ
+      const { caption, username, type, mediaUrls, thumbnail, stats } = json.data
+      const mediaUrl = mediaUrls[0] 
 
-𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Titulo* › ${title}
-𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Likes* › ${like}
-𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Comentarios* › ${comment}
+      const captionMsg = `ㅤ۟∩　ׅ　★ ໌　ׅ　🅘𝖦 🅓ownload　ׄᰙ
+
+𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Usuario* › ${username}
 𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Tipo* › ${type}
+𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Likes* › ${stats?.likes || 0}
+𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Comentarios* › ${stats?.comments || 0}
 𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Enlace* › ${url}
+𖣣ֶㅤ֯⌗ ❀  ׄ ⬭ *Caption* › ${caption || 'Sin descripción'}
 `.trim()
 
       await client.sendMessage(
         m.chat,
         {
-          [type]: { url: dl },
-          caption
+          [type]: { url: mediaUrl },
+          caption: captionMsg,
+          thumbnail: thumbnail ? { url: thumbnail } : undefined
         },
         { quoted: m }
       )
 
     } catch (e) {
-     // console.error(e)
-      await client.reply(m.chat, msgglobal, m)
+      await client.reply(m.chat, magglobal + e, m)
     }
   }
-};
+}
