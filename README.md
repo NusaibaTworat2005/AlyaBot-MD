@@ -59,7 +59,7 @@ Quiero dejar algo completamente claro: mi base es única, original y desarrollad
 Fue creada desde cero por **AzamiJs**, quien posteriormente se retiró del proyecto.  
 Desde entonces, durante todos estos meses, he sido yo quien la ha mejorado, optimizado y evolucionado hasta convertirla en lo que es hoy.
 
-Cualquier otra versión que circule —incluyendo **Diamond** — son copias no autorizadas que no representan mi trabajo real, no cuentan con mi aprobación y no tienen validez oficial dentro de mi proyecto.
+Cualquier otra versión que circule —incluyendo **Diamond** (Bot de David-Chian) — son copias no autorizadas que no representan mi trabajo real, no cuentan con mi aprobación y no tienen validez oficial dentro de mi proyecto.
 
 Mi estructura, mi lógica y mi diseño pertenecen exclusivamente a mi desarrollo.  
 Ninguna réplica, modificación o derivado externo tiene relación con mi trabajo actual ni con la identidad oficial de mi proyecto.
