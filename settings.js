@@ -23,7 +23,6 @@ global.pairing_code = true
 global.number_bot = ''
 global.msgglobal = '[Error: *TypeError*] fetch failed'
 global.dev = '☄︎ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sᴛᴇʟʟᴀʀ'
-global.termux = true // -• True: si acepta que el bot se ejecute en termux (usara db json "menos rendimiento"), False: no acepta que el bot se ejecue en termux (usa db sql "mejor rendimiento")•-
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
