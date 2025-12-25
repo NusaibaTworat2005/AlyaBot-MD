@@ -22,7 +22,8 @@ global.version = '^1.0'
 global.pairing_code = true
 global.number_bot = ''
 global.msgglobal = '[Error: *TypeError*] fetch failed'
-globalThis.dev = '☄︎ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sᴛᴇʟʟᴀʀ'
+global.dev = '☄︎ ᴘᴏᴡᴇʀᴇᴅ ʙʏ sᴛᴇʟʟᴀʀ'
+global.termux = false
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
