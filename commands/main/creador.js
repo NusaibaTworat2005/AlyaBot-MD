@@ -13,7 +13,7 @@ export default {
         number,
         name: 'Creador Principal 🥗',
         org: dev,
-        email: 'stellarwa.help@gmail.com',
+        email: 'devzyxljs@gmail.com',
         region: 'Argentina',
         website: 'https://api.stellarwa.xyz',
         note: '🐸 Creador oficial de todo Stellar.'
